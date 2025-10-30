@@ -1,0 +1,108 @@
+@use "./variables.scss" as *;
+
+// Mixin para el contenedor principal de cada sección
+@mixin section-container {
+  @apply border-b border-secondary;
+}
+
+// Mixin para el contenedor de contenido principal
+@mixin section-content {
+  @apply relative z-10 w-full border-x border-secondary bg-black px-2.5 py-[200px] lg:mx-auto lg:max-w-[80vw] lg:px-5;
+}
+
+@mixin section-content-primary {
+  @include section-content;
+
+  background:
+    radial-gradient($primary20 2%, transparent 3%),
+    repeating-linear-gradient(
+      0deg,
+      transparent 6.5%,
+      #000000 7%,
+      #000000 9%,
+      transparent 10%
+    ),
+    linear-gradient(
+      45deg,
+      transparent 49%,
+      $primary20 49%,
+      $primary20 51%,
+      transparent 51%
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 49%,
+      $primary20 49%,
+      $primary20 51%,
+      transparent 51%
+    );
+  background-size: 0.5em 0.5em;
+  background-color: #000000;
+}
+
+@mixin section-content-secondary {
+  @include section-content;
+
+  background:
+    radial-gradient($secondary20 2%, transparent 3%),
+    repeating-linear-gradient(
+      0deg,
+      transparent 6.5%,
+      #000000 7%,
+      #000000 9%,
+      transparent 10%
+    ),
+    linear-gradient(
+      45deg,
+      transparent 49%,
+      $secondary20 49%,
+      $secondary20 51%,
+      transparent 51%
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 49%,
+      $secondary20 49%,
+      $secondary20 51%,
+      transparent 51%
+    );
+  background-size: 0.5em 0.5em;
+  background-color: #000000;
+}
+
+@mixin inner-container-primary {
+  @apply relative flex w-full flex-col gap-10 border border-primary p-10 lg:mx-auto lg:max-w-6xl;
+
+  background-image: repeating-linear-gradient(
+    0deg,
+    $primary20,
+    $primary20 1px,
+    black 1px,
+    black
+  );
+  background-size: 5px 5px;
+  background-color: #0e0e0e;
+}
+// Mixin para el contenedor interno con fondo de gradiente
+@mixin inner-container-secondary {
+  @apply relative flex w-full flex-col gap-10 border border-secondary p-5 lg:mx-auto lg:max-w-6xl lg:p-10;
+
+  background-image: repeating-linear-gradient(
+    0deg,
+    $secondary20,
+    $secondary20 1px,
+    black 1px,
+    black
+  );
+  background-size: 5px 5px;
+  background-color: #0e0e0e;
+}
+
+// Mixin para títulos de sección
+@mixin section-title-secondary {
+  @apply relative z-10 font-orbitron text-2xl font-bold text-secondary;
+}
+
+@mixin section-title-primary {
+  @apply relative z-10 font-orbitron text-2xl font-bold text-primary;
+}

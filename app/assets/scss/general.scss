@@ -1,0 +1,281 @@
+@use "./fonts.scss" as *;
+@use "./variables.scss" as *;
+
+.vue-gradient-text {
+  background: -webkit-linear-gradient(315deg, #42d392 25%, #647eff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin primary-gradient-text {
+  @apply bg-gradient-to-r from-[#42d392] from-stone-700 to-[#647eff] to-stone-500 bg-clip-text text-transparent;
+}
+
+@mixin section-wrapper {
+  @apply relative h-screen w-full;
+}
+
+@mixin corner-effect {
+  $corner-color: $primary;
+
+  @apply bg-[length:5px_5px] bg-no-repeat;
+
+  background-position:
+    0 0,
+    0 0,
+    100% 0,
+    100% 0,
+    0 100%,
+    0 100%,
+    100% 100%,
+    100% 100%;
+
+  box-shadow: 0 0 10px #04464015;
+
+  background-image:
+    linear-gradient(to right, $corner-color 1px, transparent 1px),
+    linear-gradient(to bottom, $corner-color 1px, transparent 1px),
+    linear-gradient(to left, $corner-color 1px, transparent 1px),
+    linear-gradient(to bottom, $corner-color 1px, transparent 1px),
+    linear-gradient(to right, $corner-color 1px, transparent 1px),
+    linear-gradient(to top, $corner-color 1px, transparent 1px),
+    linear-gradient(to left, $corner-color 1px, transparent 1px),
+    linear-gradient(to top, $corner-color 1px, transparent 1px);
+}
+
+@mixin corner-effect-secondary {
+  $corner-color: $secondary;
+
+  @apply bg-[length:5px_5px] bg-no-repeat;
+
+  background-position:
+    0 0,
+    0 0,
+    100% 0,
+    100% 0,
+    0 100%,
+    0 100%,
+    100% 100%,
+    100% 100%;
+
+  box-shadow: 0 0 10px #04464015;
+
+  background-image:
+    linear-gradient(to right, $corner-color 1px, transparent 1px),
+    linear-gradient(to bottom, $corner-color 1px, transparent 1px),
+    linear-gradient(to left, $corner-color 1px, transparent 1px),
+    linear-gradient(to bottom, $corner-color 1px, transparent 1px),
+    linear-gradient(to right, $corner-color 1px, transparent 1px),
+    linear-gradient(to top, $corner-color 1px, transparent 1px),
+    linear-gradient(to left, $corner-color 1px, transparent 1px),
+    linear-gradient(to top, $corner-color 1px, transparent 1px);
+}
+
+@mixin middle-side-effect {
+  $corner-color: #00ffe5;
+  $line-length: 100px;
+
+  @apply bg-no-repeat;
+
+  background-position:
+    0 50%,
+    // Left side
+    100% 50%,
+    // Right side
+    50% 0,
+    // Top side
+    50% 100%; // Bottom side
+
+  background-size:
+    1px $line-length,
+    // Left side
+    1px $line-length,
+    // Right side
+    $line-length 1px,
+    // Top side
+    $line-length 1px; // Bottom side
+
+  background-image: 
+    // Left side
+    linear-gradient(
+      to bottom,
+      transparent 20%,
+      $corner-color 20%,
+      $corner-color 80%,
+      transparent 80%
+    ),
+    // Right side
+    linear-gradient(
+        to bottom,
+        transparent 20%,
+        $corner-color 20%,
+        $corner-color 80%,
+        transparent 80%
+      ),
+    // Top side
+    linear-gradient(
+        to right,
+        transparent 20%,
+        $corner-color 20%,
+        $corner-color 80%,
+        transparent 80%
+      ),
+    // Bottom side
+    linear-gradient(
+        to right,
+        transparent 20%,
+        $corner-color 20%,
+        $corner-color 80%,
+        transparent 80%
+      );
+}
+
+@mixin svg-card-vertical {
+  @apply relative h-full w-full border;
+
+  border-image: url("/svg/light-card-vertical.svg");
+
+  .dark & {
+    border-image: url("/svg/dark-card-vertical.svg");
+  }
+}
+
+@mixin svg-card-horizontal {
+  @apply relative;
+
+  border-image: url("/svg/light-card-horizontal.svg") 0 0 fill;
+
+  .dark & {
+    border-image: url("/svg/dark-card-horizontal.svg") 0 0 fill;
+  }
+}
+
+@mixin middle-side-effect-with-animation {
+  display: grid;
+  place-content: center;
+  color: white;
+  text-shadow: 0 1px 0 #000;
+
+  --border-angle: 0turn; // For animation.
+  --main-bg: conic-gradient(
+    from var(--border-angle),
+    oklch(0.147 0.004 49.25),
+    oklch(0.147 0.004 49.25) 5%,
+    oklch(0.147 0.004 49.25) 60%,
+    oklch(0.147 0.004 49.25) 95%
+  );
+
+  border: solid 1px transparent;
+  border-radius: 0;
+  --gradient-border: conic-gradient(
+    from var(--border-angle),
+    transparent 25%,
+    cyan,
+    transparent 99%,
+    transparent
+  );
+
+  background: 
+    // padding-box clip this background in to the overall element except the border.
+    var(--main-bg) padding-box,
+    // border-box extends this background to the border space
+    var(--gradient-border) border-box,
+    // Duplicate main background to fill in behind the gradient border. You can remove this if you want the border to extend "outside" the box background.
+    var(--main-bg) border-box;
+
+  background-position: center center;
+
+  animation: bg-spin 10s linear infinite;
+  @keyframes bg-spin {
+    to {
+      --border-angle: 1turn;
+    }
+  }
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
+
+// Neon effect for texts
+.neon-text-blue-glow {
+  @apply text-stone-800;
+  text-shadow:
+    0 0 1px rgb(8, 39, 53),
+    0 0 5px rgb(36, 32, 54),
+    0 0 10px rgb(144, 144, 144);
+
+  .dark & {
+    @apply text-primary;
+    text-shadow:
+      0 0 1px #fff,
+      0 0 2px #00ffb7,
+      0 0 6px #cbffff;
+  }
+}
+
+// Info text
+@mixin mini-info-text {
+  @apply font-lucania text-[10px] text-secondary;
+}
+
+.info-text {
+  @include mini-info-text;
+}
+
+// Squares
+@mixin square-shape {
+  @apply h-1 max-h-1 min-h-1 w-1 min-w-1 max-w-1 md:h-2 md:max-h-2 md:min-h-2 md:w-2 md:min-w-2 md:max-w-2;
+}
+
+.square {
+  @include square-shape;
+}
+
+// Triangles
+@mixin triangle-shape {
+  @include square-shape;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+@mixin triangle-top-left {
+  @include triangle-shape;
+  clip-path: polygon(0 0, 0% 100%, 100% 0);
+}
+
+@mixin triangle-top-right {
+  @include triangle-shape;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+@mixin triangle-bottom-left {
+  @include triangle-shape;
+  clip-path: polygon(0 0, 0 100%, 100% 100%);
+}
+
+@mixin triangle-bottom-right {
+  @include triangle-shape;
+  clip-path: polygon(100% 100%, 0 100%, 100% 0);
+}
+
+.triangle-shape-top-left {
+  @include triangle-top-left;
+}
+
+.triangle-shape-top-right {
+  @include triangle-top-right;
+}
+
+.triangle-shape-bottom-left {
+  @include triangle-bottom-left;
+}
+
+.triangle-shape-bottom-right {
+  @include triangle-bottom-right;
+}

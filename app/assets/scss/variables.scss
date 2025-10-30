@@ -1,0 +1,59 @@
+$primary: #55ead4;
+$primary10: #55ead410;
+$primary20: #55ead420;
+$primary30: #55ead430;
+$primary40: #55ead440;
+$primary50: #55ead450;
+$primary60: #55ead460;
+$primary70: #55ead470;
+$primary80: #55ead480;
+$primary90: #55ead490;
+
+$secondary: #fb1543;
+$secondary10: #fb154310;
+$secondary20: #fb154320;
+$secondary30: #fb154330;
+$secondary40: #fb154340;
+$secondary50: #fb154350;
+$secondary60: #fb154360;
+$secondary70: #fb154370;
+$secondary80: #fb154380;
+$secondary90: #fb154390;
+
+$secondarySoft: #ef4444;
+$secondarySubtle: #ef444450;
+$dark1: #003554;
+$dark2: #242423;
+$light1: #f2f4f3;
+$light2: #cfdbd5;
+
+// Margins
+$desktop-margin: 10px;
+$mobile-margin: 5px;
+
+// Gradients
+$gradient-primary: #55ead420;
+$gradient-black: rgba(0, 0, 0, 0.1);
+$gradient-primary-radial-start-color: rgba(0, 234, 255, 0.175);
+$gradient-radial-end-color: rgb(0, 0, 0);
+
+$gradient-secondary: #fb154320;
+$gradient-secondary-radial-start-color: rgba(255, 0, 0, 0.175);
+$gradient-secondary-radial-end-color: rgb(0, 0, 0);
+
+// Dots background
+$dots-bg-size: 25px;
+$dots-color: #55ead430;
+$dots-background-color: transparent;
+
+// Clip paths
+$clip-button: polygon(
+  0 0,
+  90% 0,
+  100% 20%,
+  100% 80%,
+  100% 100%,
+  10% 100%,
+  0 80%,
+  0% 20%
+);
