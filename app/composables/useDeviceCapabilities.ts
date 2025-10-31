@@ -95,19 +95,29 @@ export const useDeviceCapabilities = () => {
   };
 
   const getRecommendedConfig = computed(() => {
+    if (window && typeof window !== "undefined") {
+      return {
+        multisampling: shouldReduceQuality.value ? 0 : 8,
+        pixelRatio: shouldReduceQuality.value
+          ? Math.min(window.devicePixelRatio || 1, 1.5)
+          : Math.min(window.devicePixelRatio || 1, 2),
+        shadows: !shouldReduceQuality.value,
+        useAdvancedPostProcessing: !shouldReduceQuality.value,
+        instanceCount: shouldReduceQuality.value
+          ? isMobile.value
+            ? 800
+            : 2000
+          : 2000,
+        useComplexMaterials: !shouldReduceQuality.value,
+      };
+    }
     return {
-      multisampling: shouldReduceQuality.value ? 0 : 8,
-      pixelRatio: shouldReduceQuality.value
-        ? Math.min(window.devicePixelRatio || 1, 1.5)
-        : Math.min(window.devicePixelRatio || 1, 2),
-      shadows: !shouldReduceQuality.value,
-      useAdvancedPostProcessing: !shouldReduceQuality.value,
-      instanceCount: shouldReduceQuality.value
-        ? isMobile.value
-          ? 800
-          : 2000
-        : 2000,
-      useComplexMaterials: !shouldReduceQuality.value,
+      multisampling: 0,
+      pixelRatio: 1,
+      shadows: false,
+      useAdvancedPostProcessing: false,
+      instanceCount: 0,
+      useComplexMaterials: false,
     };
   });
 
