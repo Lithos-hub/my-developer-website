@@ -1,0 +1,162 @@
+{
+  "selectLanguage": "Sélectionner la langue",
+  "hero": {
+    "name": "Carlos Segura Garcia",
+    "title": "Ingénieur Logiciel",
+    "button": "Voir mon travail"
+  },
+  "about": {
+    "title": "À propos de moi",
+    "description": {
+      "part1": "Je suis un ingénieur logiciel spécialisé dans le développement front-end avec une passion pour la création d'applications web belles et fonctionnelles,",
+      "part2": "me concentrant principalement sur l'écosystème",
+      "vue": "VUE"
+    },
+    "description2": {
+      "p1": "Depuis mon enfance, ma plus grande passion a été la musique. J'ai travaillé comme compositeur et producteur pendant plusieurs années, avec un parcours musical couvrant 19 ans — du conservatoire classique aux écoles de musique moderne, études de jazz, et finalement en obtenant un diplôme en Histoire de la Musique, Sciences Musicales et Technologie Musicale. Cependant, face à des opportunités de carrière limitées en Espagne, j'ai décidé d'explorer un chemin différent.",
+      "p2": "Pendant ma dernière année d'études, j'ai découvert le monde du développement web, qui est devenu à la fois ma profession principale et mon hobby préféré.",
+      "p3": "Au fil de ces années, j'ai non seulement travaillé avec diverses entreprises sur des projets passionnants, mais je me suis également plongé dans de multiples technologies. Ma curiosité m'a mené au-delà du développement web et frontend, explorant des domaines comme le backend, le design UX/UI et la cybersécurité."
+    }
+  },
+  "summary": {
+    "title": "Résumé",
+    "mainRole": "Rôle principal :",
+    "totalExperience": "Expérience totale :",
+    "mostUsedTech": "Technologies les plus utilisées :",
+    "mainClientFields": "Principaux secteurs clients :",
+    "techStack": "Stack technologique avec lequel j'ai travaillé :"
+  },
+  "experience": {
+    "title": "Expérience",
+    "clients": "Clients :",
+    "stack": "Stack :",
+    "tasks": "Tâches :",
+    "roles": {
+      "frontEndDeveloper": "Développeur Front-end",
+      "softwareEngineer": "Ingénieur Logiciel"
+    },
+    "items": {
+      "1": {
+        "tasks": {
+          "1": "J'ai développé une application web de zéro pour BBVA pour gérer le budget de leurs projets",
+          "2": "J'ai travaillé avec une équipe de 3 développeurs, étant le seul développeur frontend",
+          "3": "J'étais responsable du développement de toute l'application de zéro",
+          "4": "J'ai travaillé en utilisant des méthodologies agiles (tableau Kanban)",
+          "5": "J'ai utilisé Vue 2, Vuex, Vuetify, SCSS et JavaScript"
+        }
+      },
+      "2": {
+        "tasks": {
+          "1": "J'ai développé une page d'atterrissage comme projet interne en utilisant Next 13, TypeScript, Tailwind CSS et Three.js",
+          "2": "J'ai aidé à obtenir de meilleures performances et optimisation SEO pour la page d'atterrissage",
+          "3": "J'ai développé une SPA comme projet interne en utilisant React, TypeScript, Tailwind CSS et AG Grid",
+          "4": "J'ai travaillé sur plusieurs projets pour McKinsey & Company et Repsol en utilisant Vue 3, TypeScript, Tailwind CSS et AG Grid",
+          "5": "J'ai travaillé en utilisant des méthodologies agiles (Scrum)",
+          "6": "J'ai travaillé dans un environnement optimal où les meilleures pratiques prévalaient, en utilisant Gitflow, des commits conventionnels et du code propre",
+          "7": "J'ai travaillé en communication avec le client en anglais",
+          "8": "J'ai développé plusieurs tests unitaires",
+          "9": "J'ai travaillé en collaboration avec l'équipe de design pour améliorer l'UI/UX de l'application"
+        }
+      },
+      "3": {
+        "tasks": {
+          "1": "J'ai aidé à migrer un projet de Vue 2/Nuxt 2 vers Vue 3/Nuxt 3",
+          "2": "J'ai été nominé pour tech lead de l'équipe en raison de mes hautes performances et capacités",
+          "3": "J'ai aidé à implémenter de zéro une nouvelle architecture basée sur les domaines (Domain-Driven Design)",
+          "4": "J'ai communiqué en anglais avec le frontend lead du client et les autres développeurs quotidiennement",
+          "5": "J'ai aidé à développer des tests unitaires sous la philosophie du Développement Orienté par le Comportement"
+        }
+      },
+      "4": {
+        "tasks": {
+          "1": "J'ai développé en tant que développeur principal une SPA SaaS complexe de zéro en utilisant les dernières technologies frontend",
+          "2": "J'ai travaillé en étroite collaboration avec l'équipe UX/UI pour implémenter pixel perfect sur le frontend",
+          "3": "J'ai implémenté des améliorations architecturales pour modulariser le code plus efficacement",
+          "4": "J'ai implémenté de nombreuses fonctionnalités dans le contexte de canvas 2D, représentant des informations astronomiques",
+          "5": "J'ai travaillé en utilisant Gitflow, des commits conventionnels et les meilleures pratiques"
+        }
+      },
+      "5": {
+        "tasks": {
+          "1": "Je travaille dans une équipe interne pour El Corte Inglés pour développer une nouvelle expérience e-commerce",
+          "2": "Je développe de nouvelles fonctionnalités et résous des problèmes et défauts dans plusieurs projets pour une nouvelle expérience de recherche",
+          "3": "Je travaille au développement de nouvelles fonctionnalités qui étendent ou améliorent l'expérience du site Web, ainsi qu'à la refactorisation et à l'amélioration de ses performances",
+          "4": "Je développe des tests unitaires avec Jest, Testing Library et Vue Test Utils",
+          "5": "Je collabore avec l'équipe QA pour les tests manuels",
+          "6": "Je travaille sous la méthodologie Scrum"
+        }
+      }
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "repository": "Dépôt",
+    "liveDemo": "Démo en direct",
+    "projects": {
+      "1": {
+        "prevTitle": "Paquet NPM",
+        "title": "Vue Form Latte",
+        "description": "Bibliothèque de composants pour générer des formulaires dynamiques"
+      },
+      "2": {
+        "prevTitle": "Portfolio de composants UI",
+        "title": "iUI",
+        "description": "iUI est un portfolio de composants réalisé avec Vue 3, TypeScript, Tailwind CSS, SASS, Vitest et Vite."
+      },
+      "3": {
+        "prevTitle": "Modèle 3D du système solaire",
+        "title": "iOrbit",
+        "description": "Modèle 3D interactif du système solaire utilisant React Three Fiber (Three.js) et React."
+      },
+      "4": {
+        "prevTitle": "App Landing Next 13",
+        "title": "iAdopt",
+        "description": "Outil de chatbot qui aide les refuges pour animaux à trouver le meilleur match pour leurs animaux et les adoptants potentiels en utilisant ChatGPT."
+      },
+      "5": {
+        "prevTitle": "SPA React + Proxy Node",
+        "title": "Infojobs Hackathon 2023",
+        "description": "Ma soumission pour l'Infojobs Hackathon 2023 où je propose plusieurs nouvelles fonctionnalités utilisant l'API OpenAI (ChatGPT et Whisper)."
+      },
+      "6": {
+        "prevTitle": "SPA fullstack MERN",
+        "title": "iPet",
+        "description": "Application pour gérer les animaux de compagnie, événements, rendez-vous, vétérinaires, contacts, notes, etc."
+      },
+      "7": {
+        "prevTitle": "SPA fullstack MEVN",
+        "title": "iMovies",
+        "description": "Application pour rechercher, afficher et enregistrer des films en utilisant l'API TMDB."
+      },
+      "8": {
+        "prevTitle": "SPA Frontend (Vue 3)",
+        "title": "iCompose",
+        "description": "Portfolio de composants Vue créé à partir de zéro."
+      },
+      "9": {
+        "prevTitle": "SPA Frontend (Vue 3)",
+        "title": "iCode",
+        "description": "Éditeur de code en ligne avec HTML, CSS et JavaScript utilisant Monaco Editor."
+      },
+      "10": {
+        "prevTitle": "SPA Frontend (Vue 3)",
+        "title": "iShop",
+        "description": "Application e-commerce fictive simulant un processus de commande réel."
+      }
+    }
+  },
+  "footer": {
+    "title": "Fait avec ❤️ et",
+    "developedBy": "Développé et conçu par",
+    "location": "Localisation"
+  },
+  "common": {
+    "version": "Version",
+    "location": "Localisation",
+    "present": "Présent",
+    "year": "an",
+    "years": "ans",
+    "month": "mois",
+    "months": "mois"
+  }
+}

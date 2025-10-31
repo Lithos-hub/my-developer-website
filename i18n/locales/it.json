@@ -1,0 +1,162 @@
+{
+  "selectLanguage": "Seleziona lingua",
+  "hero": {
+    "name": "Carlos Segura Garcia",
+    "title": "Ingegnere del Software",
+    "button": "Vedi il mio lavoro"
+  },
+  "about": {
+    "title": "Chi sono",
+    "description": {
+      "part1": "Sono un ingegnere del software specializzato nello sviluppo front-end con la passione di creare applicazioni web belle e funzionali,",
+      "part2": "focalizzandomi principalmente sull'ecosistema",
+      "vue": "VUE"
+    },
+    "description2": {
+      "p1": "Fin da bambino, la mia più grande passione è stata la musica. Ho lavorato come compositore e produttore per diversi anni, con un percorso musicale che abbraccia 19 anni: dal conservatorio classico alle scuole di musica moderna, studi di jazz, e infine conseguendo una laurea in Storia della Musica, Scienze Musicali e Tecnologia Musicale. Tuttavia, di fronte a opportunità di carriera limitate in Spagna, ho deciso di esplorare un percorso diverso.",
+      "p2": "Durante il mio ultimo anno di studi, ho scoperto il mondo dello sviluppo web, che alla fine si è evoluto sia nella mia professione principale che nel mio hobby preferito.",
+      "p3": "In questi anni, non solo ho lavorato con varie aziende su progetti entusiasmanti, ma mi sono anche immerso in molte tecnologie. La mia curiosità mi ha portato oltre il solo sviluppo web e frontend, esplorando aree come backend, design UX/UI e cybersecurity."
+    }
+  },
+  "summary": {
+    "title": "Riassunto",
+    "mainRole": "Ruolo principale:",
+    "totalExperience": "Esperienza totale:",
+    "mostUsedTech": "Tecnologie più usate:",
+    "mainClientFields": "Principali settori clienti:",
+    "techStack": "Stack tecnologico con cui ho lavorato:"
+  },
+  "experience": {
+    "title": "Esperienza",
+    "clients": "Clienti:",
+    "stack": "Stack:",
+    "tasks": "Compiti:",
+    "roles": {
+      "frontEndDeveloper": "Sviluppatore Front-end",
+      "softwareEngineer": "Ingegnere del Software"
+    },
+    "items": {
+      "1": {
+        "tasks": {
+          "1": "Ho sviluppato un'applicazione web da zero per BBVA per gestire il budget dei loro progetti",
+          "2": "Ho lavorato con un team di 3 sviluppatori, essendo l'unico sviluppatore frontend",
+          "3": "Sono stato responsabile dello sviluppo dell'intera applicazione da zero",
+          "4": "Ho lavorato utilizzando metodologie agili (bacheca Kanban)",
+          "5": "Ho utilizzato Vue 2, Vuex, Vuetify, SCSS e JavaScript"
+        }
+      },
+      "2": {
+        "tasks": {
+          "1": "Ho sviluppato una landing page come progetto interno utilizzando Next 13, TypeScript, Tailwind CSS e Three.js",
+          "2": "Ho aiutato a ottenere migliori prestazioni e ottimizzazione SEO per la landing page",
+          "3": "Ho sviluppato una SPA come progetto interno utilizzando React, TypeScript, Tailwind CSS e AG Grid",
+          "4": "Ho lavorato su diversi progetti per McKinsey & Company e Repsol utilizzando Vue 3, TypeScript, Tailwind CSS e AG Grid",
+          "5": "Ho lavorato utilizzando metodologie agili (Scrum)",
+          "6": "Ho lavorato in un ambiente ottimale dove prevalevano le migliori pratiche, utilizzando Gitflow, commit convenzionali e codice pulito",
+          "7": "Ho lavorato in comunicazione con il cliente in inglese",
+          "8": "Ho sviluppato diversi test unitari",
+          "9": "Ho lavorato in collaborazione con il team di design per migliorare l'UI/UX dell'applicazione"
+        }
+      },
+      "3": {
+        "tasks": {
+          "1": "Ho aiutato a migrare un progetto da Vue 2/Nuxt 2 a Vue 3/Nuxt 3",
+          "2": "Sono stato nominato tech lead del team grazie alle mie elevate prestazioni e capacità",
+          "3": "Ho aiutato a implementare da zero una nuova architettura basata su domini (Domain-Driven Design)",
+          "4": "Ho comunicato in inglese con il frontend lead del cliente e gli altri sviluppatori quotidianamente",
+          "5": "Ho aiutato a sviluppare test unitari sotto la filosofia dello Sviluppo Guidato dal Comportamento"
+        }
+      },
+      "4": {
+        "tasks": {
+          "1": "Ho sviluppato come sviluppatore principale una SPA SaaS complessa da zero utilizzando le ultime tecnologie frontend",
+          "2": "Ho lavorato a stretto contatto con il team UX/UI per implementare pixel perfect sul frontend",
+          "3": "Ho implementato miglioramenti architetturali per modularizzare il codice in modo più efficiente",
+          "4": "Ho implementato numerose funzionalità nel contesto di canvas 2D, rappresentando informazioni astronomiche",
+          "5": "Ho lavorato utilizzando Gitflow, commit convenzionali e le migliori pratiche"
+        }
+      },
+      "5": {
+        "tasks": {
+          "1": "Sto lavorando in uno squad interno per El Corte Inglés per sviluppare una nuova esperienza e-commerce",
+          "2": "Sto sviluppando nuove funzionalità e risolvendo problemi e difetti in diversi progetti per una nuova esperienza di ricerca",
+          "3": "Lavoro allo sviluppo di nuove funzionalità che espandono o migliorano l'esperienza del sito web, nonché al refactoring e al miglioramento delle sue prestazioni",
+          "4": "Sto sviluppando test unitari con Jest, Testing Library e Vue Test Utils",
+          "5": "Collaboro con il team QA per i test manuali",
+          "6": "Sto lavorando sotto la metodologia Scrum"
+        }
+      }
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "repository": "Repository",
+    "liveDemo": "Demo in diretta",
+    "projects": {
+      "1": {
+        "prevTitle": "Pacchetto NPM",
+        "title": "Vue Form Latte",
+        "description": "Libreria di componenti per generare formulari dinamici"
+      },
+      "2": {
+        "prevTitle": "Portfolio di componenti UI",
+        "title": "iUI",
+        "description": "iUI è un portfolio di componenti realizzato con Vue 3, TypeScript, Tailwind CSS, SASS, Vitest e Vite."
+      },
+      "3": {
+        "prevTitle": "Modello 3D del sistema solare",
+        "title": "iOrbit",
+        "description": "Modello 3D interattivo del sistema solare usando React Three Fiber (Three.js) e React."
+      },
+      "4": {
+        "prevTitle": "App Landing Next 13",
+        "title": "iAdopt",
+        "description": "Strumento chatbot che aiuta i rifugi per animali a trovare il miglior match per i loro animali e adottanti potenziali usando ChatGPT."
+      },
+      "5": {
+        "prevTitle": "SPA React + Proxy Node",
+        "title": "Infojobs Hackathon 2023",
+        "description": "La mia proposta per l'Infojobs Hackathon 2023 dove propongo diverse nuove funzionalità usando l'API OpenAI (ChatGPT e Whisper)."
+      },
+      "6": {
+        "prevTitle": "SPA fullstack MERN",
+        "title": "iPet",
+        "description": "Applicazione per gestire animali domestici, eventi, appuntamenti, veterinari, contatti, note, ecc."
+      },
+      "7": {
+        "prevTitle": "SPA fullstack MEVN",
+        "title": "iMovies",
+        "description": "App per cercare, visualizzare e salvare film usando l'API TMDB."
+      },
+      "8": {
+        "prevTitle": "SPA Frontend (Vue 3)",
+        "title": "iCompose",
+        "description": "Portfolio di componenti Vue creato da zero."
+      },
+      "9": {
+        "prevTitle": "SPA Frontend (Vue 3)",
+        "title": "iCode",
+        "description": "Editor di codice online con HTML, CSS e JavaScript usando Monaco Editor."
+      },
+      "10": {
+        "prevTitle": "SPA Frontend (Vue 3)",
+        "title": "iShop",
+        "description": "App e-commerce fake che simula un processo di ordinazione reale."
+      }
+    }
+  },
+  "footer": {
+    "title": "Fatto con ❤️ e",
+    "developedBy": "Sviluppato e progettato da",
+    "location": "Posizione"
+  },
+  "common": {
+    "version": "Versione",
+    "location": "Posizione",
+    "present": "Presente",
+    "year": "anno",
+    "years": "anni",
+    "month": "mese",
+    "months": "mesi"
+  }
+}

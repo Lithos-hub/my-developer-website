@@ -20,20 +20,16 @@
 
   @apply bg-[length:5px_5px] bg-no-repeat;
 
-  background-position:
-    0 0,
-    0 0,
-    100% 0,
-    100% 0,
-    0 100%,
-    0 100%,
-    100% 100%,
+  background-position: 0 0, 0 0, 100% 0, 100% 0, 0 100%, 0 100%, 100% 100%,
     100% 100%;
 
   box-shadow: 0 0 10px #04464015;
 
-  background-image:
-    linear-gradient(to right, $corner-color 1px, transparent 1px),
+  background-image: linear-gradient(
+      to right,
+      $corner-color 1px,
+      transparent 1px
+    ),
     linear-gradient(to bottom, $corner-color 1px, transparent 1px),
     linear-gradient(to left, $corner-color 1px, transparent 1px),
     linear-gradient(to bottom, $corner-color 1px, transparent 1px),
@@ -48,20 +44,16 @@
 
   @apply bg-[length:5px_5px] bg-no-repeat;
 
-  background-position:
-    0 0,
-    0 0,
-    100% 0,
-    100% 0,
-    0 100%,
-    0 100%,
-    100% 100%,
+  background-position: 0 0, 0 0, 100% 0, 100% 0, 0 100%, 0 100%, 100% 100%,
     100% 100%;
 
   box-shadow: 0 0 10px #04464015;
 
-  background-image:
-    linear-gradient(to right, $corner-color 1px, transparent 1px),
+  background-image: linear-gradient(
+      to right,
+      $corner-color 1px,
+      transparent 1px
+    ),
     linear-gradient(to bottom, $corner-color 1px, transparent 1px),
     linear-gradient(to left, $corner-color 1px, transparent 1px),
     linear-gradient(to bottom, $corner-color 1px, transparent 1px),
@@ -77,8 +69,7 @@
 
   @apply bg-no-repeat;
 
-  background-position:
-    0 50%,
+  background-position: 0 50%,
     // Left side
     100% 50%,
     // Right side
@@ -86,8 +77,7 @@
     // Top side
     50% 100%; // Bottom side
 
-  background-size:
-    1px $line-length,
+  background-size: 1px $line-length,
     // Left side
     1px $line-length,
     // Right side
@@ -205,19 +195,8 @@
 
 // Neon effect for texts
 .neon-text-blue-glow {
-  @apply text-stone-800;
-  text-shadow:
-    0 0 1px rgb(8, 39, 53),
-    0 0 5px rgb(36, 32, 54),
-    0 0 10px rgb(144, 144, 144);
-
-  .dark & {
-    @apply text-primary;
-    text-shadow:
-      0 0 1px #fff,
-      0 0 2px #00ffb7,
-      0 0 6px #cbffff;
-  }
+  @apply text-primary;
+  text-shadow: 0 0 1px #fff, 0 0 2px #00ffb7, 0 0 6px #cbffff;
 }
 
 // Info text

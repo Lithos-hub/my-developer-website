@@ -1,0 +1,176 @@
+{
+  "selectLanguage": "Seleccionar idioma",
+  "hero": {
+    "name": "Carlos Segura Garcia",
+    "title": "Desarrollador de Software",
+    "button": "Ver mi trabajo"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "description": {
+      "part1": "Soy un ingeniero de software especializado en desarrollo front-end con pasión por crear aplicaciones web hermosas y funcionales,",
+      "part2": "enfocándome principalmente en el ecosistema",
+      "vue": "VUE"
+    },
+    "description2": {
+      "p1": "Desde niño, mi mayor pasión ha sido la música. Trabajé como compositor y productor durante varios años, con un recorrido musical que abarca 19 años: desde el conservatorio clásico hasta escuelas de música modernas, estudios de Jazz, y finalmente obteniendo un grado en Historia de la Música, Ciencias Musicales y Tecnología Musical. Sin embargo, enfrentado a oportunidades limitadas en España, decidí explorar un camino diferente.",
+      "p2": "Durante mi último año de estudios, descubrí el mundo del desarrollo web, que eventualmente se convirtió tanto en mi profesión principal como en mi hobby favorito.",
+      "p3": "A lo largo de estos años, no solo he trabajado con varias empresas en proyectos emocionantes, sino que también me he sumergido en múltiples tecnologías. Mi curiosidad me ha llevado más allá del desarrollo web y frontend, explorando áreas como backend, diseño UX/UI y ciberseguridad."
+    }
+  },
+  "summary": {
+    "title": "Resumen",
+    "mainRole": "Rol principal:",
+    "mainRoleValue": "Desarrollador Front-end",
+    "totalExperience": "Experiencia total:",
+    "mostUsedTech": "Tecnologías más usadas:",
+    "mainClientFields": "Principales sectores de clientes:",
+    "techStack": "Stack tecnológico con el que he trabajado:"
+  },
+  "experience": {
+    "title": "Experiencia",
+    "clients": "Clientes:",
+    "stack": "Stack:",
+    "tasks": "Tareas:",
+    "roles": {
+      "frontEndDeveloper": "Desarrollador Front-end",
+      "softwareEngineer": "Ingeniero de Software"
+    },
+    "items": {
+      "1": {
+        "tasks": {
+          "1": "Desarrollé una aplicación web desde cero para BBVA para gestionar el presupuesto de sus proyectos",
+          "2": "Trabajé con un equipo de 3 desarrolladores, siendo el único desarrollador frontend",
+          "3": "Fui responsable del desarrollo de toda la aplicación desde cero",
+          "4": "Trabajé usando metodologías ágiles (tablero Kanban)",
+          "5": "Usé Vue 2, Vuex, Vuetify, SCSS y JavaScript"
+        }
+      },
+      "2": {
+        "tasks": {
+          "1": "Desarrollé una landing page como proyecto interno usando Next 13, TypeScript, Tailwind CSS y Three.js",
+          "2": "Ayudé a mejorar el rendimiento y la optimización SEO de la landing page",
+          "3": "Desarrollé una SPA como proyecto interno usando React, TypeScript, Tailwind CSS y AG Grid",
+          "4": "Trabajé en varios proyectos para McKinsey & Company y Repsol usando Vue 3, TypeScript, Tailwind CSS y AG Grid",
+          "5": "Trabajé usando metodologías ágiles (Scrum)",
+          "6": "Trabajé en un entorno óptimo donde prevalecieron las mejores prácticas, usando Gitflow, commits convencionales y código limpio",
+          "7": "Trabajé en comunicación con el cliente en inglés",
+          "8": "Desarrollé varias pruebas unitarias",
+          "9": "Trabajé en colaboración con el equipo de diseño para mejorar la UI/UX de la aplicación"
+        }
+      },
+      "3": {
+        "tasks": {
+          "1": "Ayudé a migrar un proyecto de Vue 2/Nuxt 2 a Vue 3/Nuxt 3",
+          "2": "Fui nominado para tech lead del equipo debido a mi alto rendimiento y capacidades",
+          "3": "Ayudé a implementar desde cero una nueva arquitectura basada en dominios (Domain-Driven Design)",
+          "4": "Me comuniqué en inglés con el frontend lead del cliente y otros desarrolladores a diario",
+          "5": "Ayudé a desarrollar pruebas unitarias bajo la filosofía de Desarrollo Dirigido por Comportamiento"
+        }
+      },
+      "4": {
+        "tasks": {
+          "1": "Desarrollé como desarrollador principal una SPA SaaS compleja desde cero usando las últimas tecnologías frontend",
+          "2": "Trabajé estrechamente con el equipo UX/UI para implementar pixel perfect en el frontend",
+          "3": "Implementé mejoras arquitectónicas para modularizar el código de manera más eficiente",
+          "4": "Implementé numerosas características en el contexto de canvas 2D, representando información astronómica",
+          "5": "Trabajé usando Gitflow, commits convencionales y mejores prácticas"
+        }
+      },
+      "5": {
+        "tasks": {
+          "1": "Estoy trabajando en un squad interno para El Corte Inglés para desarrollar una nueva experiencia de comercio electrónico",
+          "2": "Estoy desarrollando nuevas características y resolviendo problemas y defectos en varios proyectos para una nueva experiencia de búsqueda",
+          "3": "Trabajo en desarrollar nuevas características que amplían o mejoran la experiencia del sitio web, así como refactorizar y mejorar su rendimiento",
+          "4": "Estoy desarrollando pruebas unitarias con Jest, Testing Library y Vue Test Utils",
+          "5": "Colaboro con el equipo de QA para pruebas manuales",
+          "6": "Estoy trabajando bajo metodología Scrum"
+        }
+      }
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "repository": "Repositorio",
+    "liveDemo": "Demo en vivo",
+    "projects": {
+      "1": {
+        "prevTitle": "Paquete NPM",
+        "title": "Vue Form Latte",
+        "description": "Biblioteca de componentes para generar formularios dinámicos"
+      },
+      "2": {
+        "prevTitle": "Portfolio de componentes UI",
+        "title": "iUI",
+        "description": "iUI es un portfolio de componentes hecho con Vue 3, TypeScript, Tailwind CSS, SASS, Vitest y Vite."
+      },
+      "3": {
+        "prevTitle": "Modelo 3D del sistema solar",
+        "title": "iOrbit",
+        "description": "Modelo 3D interactivo del sistema solar usando React Three Fiber (Three.js) y React."
+      },
+      "4": {
+        "prevTitle": "App Landing Next 13",
+        "title": "iAdopt",
+        "description": "Herramienta de chatbot que ayuda a los refugios de animales a encontrar la mejor coincidencia para sus animales y posibles adoptantes usando ChatGPT."
+      },
+      "5": {
+        "prevTitle": "SPA React + Proxy Node",
+        "title": "Infojobs Hackathon 2023",
+        "description": "Mi propuesta para el Infojobs Hackathon 2023 donde propongo varias características nuevas usando la API de OpenAI (ChatGPT y Whisper)."
+      },
+      "6": {
+        "prevTitle": "SPA fullstack MERN",
+        "title": "iPet",
+        "description": "Aplicación para gestionar mascotas, eventos, citas, veterinarios, contactos, notas, etc."
+      },
+      "7": {
+        "prevTitle": "SPA fullstack MEVN",
+        "title": "iMovies",
+        "description": "App para buscar, mostrar y guardar películas usando la API de TMDB."
+      },
+      "8": {
+        "prevTitle": "SPA Frontend (Vue 3)",
+        "title": "iCompose",
+        "description": "Portfolio de componentes Vue creado desde cero."
+      },
+      "9": {
+        "prevTitle": "SPA Frontend (Vue 3)",
+        "title": "iCode",
+        "description": "Editor de código en línea con HTML, CSS y JavaScript usando Monaco Editor."
+      },
+      "10": {
+        "prevTitle": "SPA Frontend (Vue 3)",
+        "title": "iShop",
+        "description": "App de comercio electrónico falsa simulando un proceso de pedido real."
+      }
+    }
+  },
+  "footer": {
+    "title": "Hecho con ❤️ y",
+    "developedBy": "Desarrollado y diseñado por",
+    "location": "Ubicación",
+    "locationValue": "Málaga - España"
+  },
+  "topBar": {
+    "zone": "Zona:"
+  },
+  "common": {
+    "version": "Versión",
+    "location": "Ubicación",
+    "present": "Actualidad",
+    "year": "año",
+    "years": "años",
+    "month": "mes",
+    "months": "meses",
+    "developerPhoto": "Foto del desarrollador",
+    "decorationAlt": "Imagen decorativa"
+  },
+  "onboarding": {
+    "attentionAlt": "Atención de onboarding",
+    "leftSeparatorAlt": "Separador izquierdo de onboarding",
+    "rightSeparatorAlt": "Separador derecho de onboarding",
+    "floatingAlt": "Imagen flotante de onboarding",
+    "tasksCompleted": "Tareas completadas:"
+  }
+}

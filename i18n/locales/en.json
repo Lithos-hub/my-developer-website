@@ -1,0 +1,176 @@
+{
+  "selectLanguage": "Select language",
+  "hero": {
+    "name": "Carlos Segura Garcia",
+    "title": "Software Engineer",
+    "button": "View my work"
+  },
+  "about": {
+    "title": "About me",
+    "description": {
+      "part1": "I'm a software engineer specialized in front-end development with a passion for creating beautiful and functional web applications,",
+      "part2": "mainly focusing on",
+      "vue": "VUE"
+    },
+    "description2": {
+      "p1": "Since I was a child, my greatest passion has been music. I worked as a composer and producer for several years, with a musical journey spanning 19 years — from classical conservatory to modern music schools, Jazz studies, and ultimately earning a degree in Music History, Science, and Music Technology. However, faced with limited career opportunities in Spain, I decided to explore a different path.",
+      "p2": "During my final year of studies, I discovered the world of web development, which eventually evolved into both my primary profession and cherished hobby.",
+      "p3": "Throughout these years, I've not only worked with various companies on exciting projects but have also delved deep into multiple technologies. My curiosity has led me beyond just web and frontend development, exploring areas like backend, UX/UI design, and cybersecurity."
+    }
+  },
+  "summary": {
+    "title": "Summary",
+    "mainRole": "Main role:",
+    "mainRoleValue": "Front-end Developer",
+    "totalExperience": "Total experience:",
+    "mostUsedTech": "Most used technologies:",
+    "mainClientFields": "Main client fields:",
+    "techStack": "Technology stack I have worked with:"
+  },
+  "experience": {
+    "title": "Experience",
+    "clients": "Clients:",
+    "stack": "Stack:",
+    "tasks": "Tasks:",
+    "roles": {
+      "frontEndDeveloper": "Front-end Developer",
+      "softwareEngineer": "Software Engineer"
+    },
+    "items": {
+      "1": {
+        "tasks": {
+          "1": "I developed a web app from scratch for BBVA to manage their projects budget",
+          "2": "I worked with a team of 3 developers, being the only frontend developer",
+          "3": "I was responsible for the development of the whole app from scratch",
+          "4": "I worked using agile methodologies (Kanban board)",
+          "5": "I used Vue 2, Vuex, Vuetify, SCSS and JavaScript"
+        }
+      },
+      "2": {
+        "tasks": {
+          "1": "I developed a landing page as internal project using Next 13, TypeScript, Tailwind CSS and Three.js",
+          "2": "I helped to get better performance and SEO optimization for the landing page",
+          "3": "I developed a SPA as internal project using React, TypeScript, Tailwind CSS and AG Grid",
+          "4": "I worked in several projects for McKinsey & Company and Repsol using Vue 3, TypeScript, Tailwind CSS and AG Grid",
+          "5": "I worked using agile methodologies (Scrum)",
+          "6": "I worked in an optimal environment where best practices prevailed, using Gitflow, conventional commits and clean code",
+          "7": "I worked in communication with the client in English",
+          "8": "I developed several unit tests",
+          "9": "I worked in collaboration with the design team to improve the UI/UX of the app"
+        }
+      },
+      "3": {
+        "tasks": {
+          "1": "I helped to migrate a project from Vue 2/Nuxt 2 to Vue 3/Nuxt 3",
+          "2": "I was nominated for tech lead of the team due to my high performance and capabilities",
+          "3": "I helped to implement from scratch a new domain-based architecture (Domain-Driven Design)",
+          "4": "I communicated in English with the client's frontend lead and the other developers on a daily basis",
+          "5": "I helped develop unit tests under the Behavior Driven Development philosophy"
+        }
+      },
+      "4": {
+        "tasks": {
+          "1": "I developed as main developer a complex SPA SaaS from scratch using the latest frontend technologies",
+          "2": "I worked closely with the UX/UI team to implement pixel perfect on the frontend",
+          "3": "I implemented architectural improvements to more efficiently modularize the code",
+          "4": "I implemented numerous features in the context of 2D canvas, representing astronomical information",
+          "5": "I worked using Gitflow, conventional commits and best practices"
+        }
+      },
+      "5": {
+        "tasks": {
+          "1": "I'm working in an internal squad for El Corte Inglés to develop a new e-commerce experience",
+          "2": "I am developing new features and solving issues and defects in several projects for a new search experience.",
+          "3": "I work on developing new features that expand or improve the website experience, as well as refactoring and improving its performance.",
+          "4": "I am developing unit tests with Jest, Testing Library and Vue Test Utils.",
+          "5": "I collaborate with the QA team for manual testing.",
+          "6": "I am working under Scrum methodology."
+        }
+      }
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "repository": "Repository",
+    "liveDemo": "Live Demo",
+    "projects": {
+      "1": {
+        "prevTitle": "NPM Package",
+        "title": "Vue Form Latte",
+        "description": "Component library to generate dynamic forms"
+      },
+      "2": {
+        "prevTitle": "UI components portfolio",
+        "title": "iUI",
+        "description": "iUI is a components portfolio made with Vue 3, TypeScript, Tailwind CSS, SASS, Vitest and Vite."
+      },
+      "3": {
+        "prevTitle": "Solar system 3D model",
+        "title": "iOrbit",
+        "description": "Interactive 3D solar system model using React Three Fiber (Three.js) and React."
+      },
+      "4": {
+        "prevTitle": "Next 13 Landing App",
+        "title": "iAdopt",
+        "description": "Chatbot tool that helps animal shelters to find the best match for their animals and potential adopters using ChatGPT."
+      },
+      "5": {
+        "prevTitle": "React SPA + Node Proxy",
+        "title": "Infojobs Hackathon 2023",
+        "description": "My submission for the Infojobs Hackathon 2023 where I propose several new features using OpenAI API (ChatGPT and Whisper)."
+      },
+      "6": {
+        "prevTitle": "MERN fullstack SPA",
+        "title": "iPet",
+        "description": "Application to manage pets, events, appointments, vets, contacts, notes, etc."
+      },
+      "7": {
+        "prevTitle": "MEVN fullstack SPA",
+        "title": "iMovies",
+        "description": "App to search, display and save movies using the TMDB API."
+      },
+      "8": {
+        "prevTitle": "Frontend SPA (Vue 3)",
+        "title": "iCompose",
+        "description": "Vue components portfolio made from scratch."
+      },
+      "9": {
+        "prevTitle": "Frontend SPA (Vue 3)",
+        "title": "iCode",
+        "description": "Online code editor with HTML, CSS and JavaScript using Monaco Editor."
+      },
+      "10": {
+        "prevTitle": "Frontend SPA (Vue 3)",
+        "title": "iShop",
+        "description": "Fake e-commerce app simulating a real ordering process."
+      }
+    }
+  },
+  "footer": {
+    "title": "Made with ❤️ and",
+    "developedBy": "Developed and designed by",
+    "location": "Location",
+    "locationValue": "Málaga - Spain"
+  },
+  "topBar": {
+    "zone": "Zone:"
+  },
+  "common": {
+    "version": "Version",
+    "location": "Location",
+    "present": "Present",
+    "year": "year",
+    "years": "years",
+    "month": "month",
+    "months": "months",
+    "developerPhoto": "Developer photo",
+    "decorationAlt": "Decoration image"
+  },
+  "onboarding": {
+    "attentionAlt": "Onboarding attention",
+    "leftSeparatorAlt": "Onboarding left separator",
+    "rightSeparatorAlt": "Onboarding right separator",
+    "floatingAlt": "Onboarding floating image",
+    "tasksCompleted": "Tasks completed:"
+  }
+}

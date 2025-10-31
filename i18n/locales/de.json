@@ -1,0 +1,162 @@
+{
+  "selectLanguage": "Sprache auswählen",
+  "hero": {
+    "name": "Carlos Segura Garcia",
+    "title": "Software-Ingenieur",
+    "button": "Meine Arbeit ansehen"
+  },
+  "about": {
+    "title": "Über mich",
+    "description": {
+      "part1": "Ich bin ein Software-Ingenieur, spezialisiert auf Frontend-Entwicklung, mit einer Leidenschaft für die Erstellung schöner und funktionaler Webanwendungen,",
+      "part2": "hauptsächlich konzentriere ich mich auf das",
+      "vue": "VUE"
+    },
+    "description2": {
+      "p1": "Seit meiner Kindheit war meine größte Leidenschaft die Musik. Ich arbeitete mehrere Jahre als Komponist und Produzent, mit einer musikalischen Reise über 19 Jahre — vom klassischen Konservatorium bis zu modernen Musikschulen, Jazz-Studien und schließlich einem Abschluss in Musikgeschichte, Musikwissenschaften und Musiktechnologie. Angesichts begrenzter Karrieremöglichkeiten in Spanien entschied ich mich jedoch, einen anderen Weg zu erkunden.",
+      "p2": "Während meines letzten Studienjahres entdeckte ich die Welt der Webentwicklung, die sich schließlich sowohl zu meinem Hauptberuf als auch zu meinem geschätzten Hobby entwickelte.",
+      "p3": "In diesen Jahren habe ich nicht nur mit verschiedenen Unternehmen an aufregenden Projekten gearbeitet, sondern mich auch in mehrere Technologien vertieft. Meine Neugier hat mich über Web- und Frontend-Entwicklung hinausgeführt und Bereiche wie Backend, UX/UI-Design und Cybersicherheit erkundet."
+    }
+  },
+  "summary": {
+    "title": "Zusammenfassung",
+    "mainRole": "Hauptrolle:",
+    "totalExperience": "Gesamterfahrung:",
+    "mostUsedTech": "Meist verwendete Technologien:",
+    "mainClientFields": "Hauptkundenbereiche:",
+    "techStack": "Technologie-Stack, mit dem ich gearbeitet habe:"
+  },
+  "experience": {
+    "title": "Erfahrung",
+    "clients": "Kunden:",
+    "stack": "Stack:",
+    "tasks": "Aufgaben:",
+    "roles": {
+      "frontEndDeveloper": "Frontend-Entwickler",
+      "softwareEngineer": "Software-Ingenieur"
+    },
+    "items": {
+      "1": {
+        "tasks": {
+          "1": "Ich habe eine Webanwendung von Grund auf für BBVA entwickelt, um das Budget ihrer Projekte zu verwalten",
+          "2": "Ich habe mit einem Team von 3 Entwicklern gearbeitet und war der einzige Frontend-Entwickler",
+          "3": "Ich war für die Entwicklung der gesamten Anwendung von Grund auf verantwortlich",
+          "4": "Ich habe mit agilen Methoden gearbeitet (Kanban-Board)",
+          "5": "Ich habe Vue 2, Vuex, Vuetify, SCSS und JavaScript verwendet"
+        }
+      },
+      "2": {
+        "tasks": {
+          "1": "Ich habe eine Landingpage als internes Projekt mit Next 13, TypeScript, Tailwind CSS und Three.js entwickelt",
+          "2": "Ich half, bessere Leistung und SEO-Optimierung für die Landingpage zu erreichen",
+          "3": "Ich habe eine SPA als internes Projekt mit React, TypeScript, Tailwind CSS und AG Grid entwickelt",
+          "4": "Ich habe an mehreren Projekten für McKinsey & Company und Repsol mit Vue 3, TypeScript, Tailwind CSS und AG Grid gearbeitet",
+          "5": "Ich habe mit agilen Methoden gearbeitet (Scrum)",
+          "6": "Ich habe in einer optimalen Umgebung gearbeitet, in der Best Practices vorherrschten, mit Gitflow, konventionellen Commits und sauberem Code",
+          "7": "Ich habe in Kommunikation mit dem Kunden auf Englisch gearbeitet",
+          "8": "Ich habe mehrere Unit-Tests entwickelt",
+          "9": "Ich habe mit dem Designteam zusammengearbeitet, um die UI/UX der Anwendung zu verbessern"
+        }
+      },
+      "3": {
+        "tasks": {
+          "1": "Ich half bei der Migration eines Projekts von Vue 2/Nuxt 2 zu Vue 3/Nuxt 3",
+          "2": "Ich wurde aufgrund meiner hohen Leistung und Fähigkeiten als Tech Lead des Teams nominiert",
+          "3": "Ich half bei der Implementierung einer neuen domänenbasierten Architektur von Grund auf (Domain-Driven Design)",
+          "4": "Ich kommunizierte täglich auf Englisch mit dem Frontend-Lead des Kunden und den anderen Entwicklern",
+          "5": "Ich half bei der Entwicklung von Unit-Tests unter der Philosophie der verhaltensorientierten Entwicklung"
+        }
+      },
+      "4": {
+        "tasks": {
+          "1": "Ich entwickelte als Hauptentwickler eine komplexe SPA SaaS von Grund auf mit den neuesten Frontend-Technologien",
+          "2": "Ich arbeitete eng mit dem UX/UI-Team zusammen, um Pixel-Perfektion im Frontend zu implementieren",
+          "3": "Ich implementierte architektonische Verbesserungen, um den Code effizienter zu modularisieren",
+          "4": "Ich implementierte zahlreiche Funktionen im Kontext von 2D-Canvas, die astronomische Informationen darstellen",
+          "5": "Ich arbeitete mit Gitflow, konventionellen Commits und Best Practices"
+        }
+      },
+      "5": {
+        "tasks": {
+          "1": "Ich arbeite in einem internen Squad für El Corte Inglés an der Entwicklung einer neuen E-Commerce-Erfahrung",
+          "2": "Ich entwickle neue Funktionen und löse Probleme und Fehler in mehreren Projekten für eine neue Suchfunktion",
+          "3": "Ich arbeite an der Entwicklung neuer Funktionen, die die Website-Erfahrung erweitern oder verbessern, sowie an der Refaktorisierung und Verbesserung ihrer Leistung",
+          "4": "Ich entwickle Unit-Tests mit Jest, Testing Library und Vue Test Utils",
+          "5": "Ich arbeite mit dem QA-Team für manuelle Tests zusammen",
+          "6": "Ich arbeite unter der Scrum-Methodik"
+        }
+      }
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "repository": "Repository",
+    "liveDemo": "Live-Demo",
+    "projects": {
+      "1": {
+        "prevTitle": "NPM-Paket",
+        "title": "Vue Form Latte",
+        "description": "Komponentenbibliothek zur Generierung dynamischer Formulare"
+      },
+      "2": {
+        "prevTitle": "UI-Komponenten-Portfolio",
+        "title": "iUI",
+        "description": "iUI ist ein Komponenten-Portfolio aus Vue 3, TypeScript, Tailwind CSS, SASS, Vitest und Vite."
+      },
+      "3": {
+        "prevTitle": "3D-Sonnensystemmodell",
+        "title": "iOrbit",
+        "description": "Interaktives 3D-Sonnensystemmodell mit React Three Fiber (Three.js) und React."
+      },
+      "4": {
+        "prevTitle": "Next 13 Landing App",
+        "title": "iAdopt",
+        "description": "Chatbot-Tool, das Tierschutzorganisationen hilft, die beste Übereinstimmung für ihre Tiere und potenzielle Adoptierende mit ChatGPT zu finden."
+      },
+      "5": {
+        "prevTitle": "React SPA + Node Proxy",
+        "title": "Infojobs Hackathon 2023",
+        "description": "Meine Einreichung für den Infojobs Hackathon 2023, in der ich mehrere neue Funktionen mit der OpenAI API (ChatGPT und Whisper) vorschlage."
+      },
+      "6": {
+        "prevTitle": "MERN fullstack SPA",
+        "title": "iPet",
+        "description": "Anwendung zur Verwaltung von Haustieren, Ereignissen, Terminen, Tierärzten, Kontakten, Notizen usw."
+      },
+      "7": {
+        "prevTitle": "MEVN fullstack SPA",
+        "title": "iMovies",
+        "description": "App zum Suchen, Anzeigen und Speichern von Filmen mit der TMDB API."
+      },
+      "8": {
+        "prevTitle": "Frontend SPA (Vue 3)",
+        "title": "iCompose",
+        "description": "Vue-Komponenten-Portfolio von Grund auf neu erstellt."
+      },
+      "9": {
+        "prevTitle": "Frontend SPA (Vue 3)",
+        "title": "iCode",
+        "description": "Online-Code-Editor mit HTML, CSS und JavaScript mit Monaco Editor."
+      },
+      "10": {
+        "prevTitle": "Frontend SPA (Vue 3)",
+        "title": "iShop",
+        "description": "Fake-E-Commerce-App, die einen echten Bestellprozess simuliert."
+      }
+    }
+  },
+  "footer": {
+    "title": "Gemacht mit ❤️ und",
+    "developedBy": "Entwickelt und designed von",
+    "location": "Standort"
+  },
+  "common": {
+    "version": "Version",
+    "location": "Standort",
+    "present": "Aktuell",
+    "year": "Jahr",
+    "years": "Jahre",
+    "month": "Monat",
+    "months": "Monate"
+  }
+}
