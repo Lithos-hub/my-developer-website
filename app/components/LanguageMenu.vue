@@ -95,7 +95,7 @@ const selectLanguage = async (langCode: string) => {
 
   &__container {
     @include corner-effect-secondary;
-    @apply absolute left-1/2 top-1/2 z-50 flex w-full max-w-[600px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center bg-dark2 p-10;
+    @apply absolute left-1/2 top-1/2 z-50 flex w-full w-full h-full lg:h-auto lg:max-w-[600px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center bg-dark2 p-10;
   }
 
   &__close-button {
