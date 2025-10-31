@@ -1,9 +1,9 @@
-// Variables para breakpoints
+// Breakpoints
 $breakpoint-mobile: 768px;
 $breakpoint-tablet: 992px;
 $breakpoint-desktop: 1200px;
 
-// Mixins para media queries
+// Media queries
 @mixin mobile {
   @media (max-width: #{$breakpoint-mobile - 1px}) {
     @content;

@@ -66,7 +66,6 @@ useHead(() => ({
   ],
 }));
 
-// Funciones de navegación
 const goBack = () => {
   navigateTo("/");
 };
@@ -84,7 +83,6 @@ const goBack = () => {
     @apply relative flex h-full min-h-[calc(100vh-60px)] flex-col items-center justify-center p-8;
   }
 
-  // Contenido principal
   &__main-content {
     @apply text-center;
   }
@@ -158,7 +156,6 @@ const goBack = () => {
 
   animation: glitch-flicker 3s ease-in-out infinite;
 
-  // Variaciones específicas para cada elemento
   &--number {
     animation: glitch-flicker 2s ease-in-out infinite,
       glitch-shake 1s ease-in-out infinite;
@@ -224,7 +221,6 @@ const goBack = () => {
   }
 }
 
-// Animaciones de glitch - Optimizadas para textos grandes
 @keyframes glitch-animation-1 {
   0% {
     clip: rect(0px, 9999px, 300px, 0);
@@ -405,7 +401,6 @@ const goBack = () => {
   }
 }
 
-// Animaciones específicas para textos pequeños
 @keyframes glitch-animation-small-1 {
   0% {
     clip: rect(0px, 9999px, 50px, 0);
@@ -538,9 +533,6 @@ const goBack = () => {
   }
 }
 
-// Animaciones
-
-// Responsive
 @media (max-width: 768px) {
   .Error404 {
     &__terminal {
