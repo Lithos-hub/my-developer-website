@@ -3,7 +3,7 @@
     <TresCanvas
       v-show="isReady"
       v-bind="gl"
-      shadows
+      :shadows="recommendedConfig.shadows"
       alpha
       preset="realistic"
       class="w-full h-full block"
@@ -20,17 +20,17 @@
         :position="[70, 50, 50]"
         :intensity="1"
         color="cyan"
-        cast-shadow
+        :cast-shadow="recommendedConfig.shadows"
       />
       <TresDirectionalLight
         :position="[-70, -50, 50]"
         :intensity="1"
         color="#EF4444"
-        cast-shadow
+        :cast-shadow="recommendedConfig.shadows"
       />
 
       <!-- Post-processing -->
-      <EffectComposerPmndrs>
+      <EffectComposerPmndrs v-if="recommendedConfig.useAdvancedPostProcessing">
         <!-- Chromatic Aberration -->
         <ChromaticAberrationPmndrs
           :offset
@@ -56,10 +56,17 @@
         <NoisePmndrs premultiply :blend-function="BlendFunction.SCREEN" />
       </EffectComposerPmndrs>
 
-      <!-- Hero Text -->
-      <!-- <Suspense>
-      <ThreejsObjectsHeroText />
-    </Suspense> -->
+      <!-- Post-processing for mobile -->
+      <EffectComposerPmndrs v-else>
+        <!-- Vignette (lighter) -->
+        <VignettePmndrs
+          :darkness="0.8"
+          :offset="0.4"
+          :blend-function="BlendFunction.SCREEN"
+        />
+        <!-- Noise (lighter) -->
+        <NoisePmndrs premultiply :blend-function="BlendFunction.SCREEN" />
+      </EffectComposerPmndrs>
 
       <Suspense>
         <ThreejsObjectsFloorWithLight />
@@ -77,10 +84,13 @@ import {
 import { BlendFunction } from "postprocessing";
 import { NoToneMapping, Vector2 } from "three";
 
-const gl = {
+const { recommendedConfig } = useDeviceCapabilities();
+
+const gl = computed(() => ({
   toneMapping: NoToneMapping,
-  multisampling: 8,
-};
+  multisampling: recommendedConfig.value.multisampling,
+  pixelRatio: recommendedConfig.value.pixelRatio,
+}));
 
 const offset = new Vector2(0.002, 0.002);
 const isReady = ref(false);

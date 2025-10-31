@@ -12,19 +12,27 @@
   <!-- Instances of cubes -->
   <Suspense>
     <TresInstancedMesh
+      :key="`instances-${numberOfCubes}`"
       ref="instancesRef"
-      cast-shadow
-      receive-shadow
+      :cast-shadow="recommendedConfig.shadows"
+      :receive-shadow="recommendedConfig.shadows"
       :args="[null!, null!, numberOfCubes]"
     >
       <TresBoxGeometry :args="[cubeSize, cubeSize, cubeSize]" />
       <TresMeshPhysicalMaterial
+        v-if="recommendedConfig.useComplexMaterials"
         :roughness="0.4"
         :metalness="1"
         :transmission="0.5"
         :thickness="1"
         :ior="1.5"
         :clearcoat="1.0"
+        color="black"
+      />
+      <TresMeshStandardMaterial
+        v-else
+        :roughness="0.4"
+        :metalness="1"
         color="black"
       />
     </TresInstancedMesh>
@@ -45,7 +53,19 @@ import {
 } from "three";
 import type { GLTF } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import { onMounted, reactive, ref, shallowRef, watch } from "vue";
+import {
+  computed,
+  nextTick,
+  onMounted,
+  onUnmounted,
+  reactive,
+  ref,
+  shallowRef,
+  watch,
+} from "vue";
+
+// Device capabilities
+const { recommendedConfig, shouldReduceQuality } = useDeviceCapabilities();
 
 // Plane state
 const height = ref(200);
@@ -54,6 +74,11 @@ const width = ref(300);
 // References
 const instancesRef = shallowRef<InstancedMesh>();
 const planeRef = shallowRef();
+const containerRef = ref<HTMLElement | null>(null);
+
+// Visibility tracking
+const isVisible = ref(true);
+let visibilityObserver: IntersectionObserver | null = null;
 
 // GLTF model state
 const modelLoaded = ref(false);
@@ -64,8 +89,39 @@ const gltfLoader = new GLTFLoader();
 // Interpolation factor for smooth movement (lower = smoother but slower)
 const movementSmoothness = 0.5;
 
+// Setup visibility observer
+const setupVisibilityObserver = () => {
+  if (typeof window === "undefined") return;
+
+  // Buscar el elemento contenedor usando querySelector en lugar de domElement
+  const findCanvasContainer = (): HTMLElement | null => {
+    // Buscar el contenedor Hero__scene en el DOM
+    return document.querySelector(".Hero__scene") as HTMLElement | null;
+  };
+
+  visibilityObserver = new IntersectionObserver(
+    (entries) => {
+      isVisible.value = entries.some((entry) => entry.isIntersecting);
+    },
+    {
+      threshold: 0.1,
+      rootMargin: "50px",
+    }
+  );
+
+  // Observar cuando el componente esté montado
+  nextTick(() => {
+    const container = findCanvasContainer();
+    if (container) {
+      visibilityObserver?.observe(container);
+    }
+  });
+};
+
 // Set up mouse move event listener and load GLTF
 onMounted(async () => {
+  setupVisibilityObserver();
+
   // Load the GLTF model
   try {
     const gltf = await new Promise<GLTF>((resolve, reject) => {
@@ -73,7 +129,7 @@ onMounted(async () => {
         "/gltf/textured-cube/textured-cube.gltf",
         resolve,
         undefined,
-        reject,
+        reject
       );
     });
 
@@ -96,6 +152,8 @@ onMounted(async () => {
       setTimeout(() => {
         if (instancesRef.value) {
           distributeInstancesUniformly();
+          // Re-observar visibilidad después de que se monte
+          setupVisibilityObserver();
         }
       }, 100);
     } else {
@@ -109,11 +167,18 @@ onMounted(async () => {
 // Configuration for cube distribution
 const cubeSize = 1; // Cube size
 const cubeSpacing = 1.005; // Cube spacing
-const numberOfCubes = 5000; // Total number of cubes
 
-// Z movement configuration
+// Número de cubos según las capacidades del dispositivo
+const numberOfCubes = computed(() => recommendedConfig.value.instanceCount);
+
+// Throttling para animación (en móviles reducir frecuencia de actualización)
+const animationThrottle = computed(() => (shouldReduceQuality.value ? 2 : 1)); // Actualizar cada 2 frames en móviles
+let frameCount = 0;
+
+// Z movement configuration - inicializar con el número máximo para evitar redimensionar
+const maxCubes = 2000;
 const cubeZConfig = ref(
-  Array(numberOfCubes)
+  Array(maxCubes)
     .fill(null)
     .map(() => {
       // Random rotation values in increments of 90 degrees (PI/2)
@@ -137,7 +202,7 @@ const cubeZConfig = ref(
         phase: Math.random() * Math.PI * 2,
         rotation: { x: rotationX, y: rotationY, z: rotationZ },
       };
-    }),
+    })
 );
 
 // Grid state
@@ -155,10 +220,11 @@ const distributeInstancesUniformly = () => {
   const mesh = instancesRef.value;
   const matrix = new Matrix4();
 
+  const currentCubeCount = numberOfCubes.value;
   const actualGridSizeX = Math.ceil(
-    Math.sqrt(numberOfCubes * (width.value / height.value)),
+    Math.sqrt(currentCubeCount * (width.value / height.value))
   );
-  const actualGridSizeY = Math.ceil(numberOfCubes / actualGridSizeX);
+  const actualGridSizeY = Math.ceil(currentCubeCount / actualGridSizeX);
 
   // Save grid information for movement
   gridSize.x = actualGridSizeX;
@@ -178,7 +244,7 @@ const distributeInstancesUniformly = () => {
 
   for (let y = 0; y < actualGridSizeY; y++) {
     for (let x = 0; x < actualGridSizeX; x++) {
-      if (index >= numberOfCubes) break;
+      if (index >= numberOfCubes.value) break;
 
       const xPos = startX + x * cubeSpacing;
       const yPos = startY + y * cubeSpacing;
@@ -208,19 +274,20 @@ const distributeInstancesUniformly = () => {
       }
 
       const config = cubeZConfig.value[index];
+      if (!config) continue;
 
       const quaternion = new Quaternion().setFromEuler(
         new Euler(
           config.rotation.x,
           config.rotation.y,
           config.rotation.z,
-          "XYZ",
-        ),
+          "XYZ"
+        )
       );
       matrix.compose(
         new Vector3(xPos, yPos, config.currentOffset),
         quaternion,
-        new Vector3(cubeSize, cubeSize, cubeSize),
+        new Vector3(cubeSize, cubeSize, cubeSize)
       );
 
       mesh.setMatrixAt(index, matrix);
@@ -230,6 +297,12 @@ const distributeInstancesUniformly = () => {
 
   mesh.instanceMatrix.needsUpdate = true;
   if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
+
+  // Recalcular el bounding sphere para evitar errores al renderizar
+  if (mesh.geometry) {
+    mesh.geometry.computeBoundingSphere();
+    mesh.computeBoundingSphere();
+  }
 };
 
 // Observe when the plane size changes to redistribute the cubes
@@ -247,6 +320,13 @@ watch(instancesRef, (value) => {
 const { onBeforeRender } = useLoop();
 
 onBeforeRender(() => {
+  if (!isVisible.value) return;
+
+  frameCount++;
+  const shouldUpdate =
+    frameCount % animationThrottle.value === 0 || !shouldReduceQuality.value;
+  if (!shouldUpdate) return;
+
   if (planeRef.value) {
     const newHeight = window.innerHeight / 200;
     const newWidth = window.innerWidth / 200;
@@ -273,7 +353,8 @@ onBeforeRender(() => {
     const waveFrequency = 1;
 
     // For each cube, calculate its new Z position
-    for (let i = 0; i < numberOfCubes; i++) {
+    const currentNumberOfCubes = numberOfCubes.value;
+    for (let i = 0; i < currentNumberOfCubes; i++) {
       // Get the current matrix
       mesh.getMatrixAt(i, matrix);
 
@@ -283,7 +364,7 @@ onBeforeRender(() => {
 
       // Calculate distance from center
       const distanceFromCenter = Math.sqrt(
-        position.x * position.x + position.y * position.y,
+        position.x * position.x + position.y * position.y
       );
 
       // Wave effect from center outward
@@ -292,6 +373,8 @@ onBeforeRender(() => {
 
       // Calculate new Z position using outward wave movement
       const config = cubeZConfig.value[i];
+      if (!config) continue;
+
       config.currentOffset =
         config.maxHeight * Math.sin(wavePhase + config.phase);
 
@@ -304,13 +387,13 @@ onBeforeRender(() => {
           config.rotation.x,
           config.rotation.y,
           config.rotation.z,
-          "XYZ",
-        ),
+          "XYZ"
+        )
       );
       matrix.compose(
         new Vector3(position.x, position.y, config.currentOffset),
         quaternion,
-        new Vector3(cubeSize, cubeSize, cubeSize * scaleZ),
+        new Vector3(cubeSize, cubeSize, cubeSize * scaleZ)
       );
 
       // Update the instance matrix
@@ -322,5 +405,23 @@ onBeforeRender(() => {
       mesh.instanceMatrix.needsUpdate = true;
     }
   }
+});
+
+// Cleanup
+onUnmounted(() => {
+  if (visibilityObserver) {
+    visibilityObserver.disconnect();
+    visibilityObserver = null;
+  }
+});
+
+// Watch para redistribuir cuando cambie el número de cubos
+// Usamos nextTick porque el componente se recrea con la key
+watch(numberOfCubes, () => {
+  nextTick(() => {
+    if (instancesRef.value) {
+      distributeInstancesUniformly();
+    }
+  });
 });
 </script>
