@@ -1,62 +1,71 @@
 <template>
-  <TresCanvas v-bind="gl" shadows alpha preset="realistic">
-    <!-- Camera -->
-    <TresPerspectiveCamera
-      :fov="80"
-      :position="[0, 0, 10]"
-      :rotation="[0, 0, 0]"
-    />
-
-    <!-- Directional Light -->
-    <TresDirectionalLight
-      :position="[70, 50, 50]"
-      :intensity="1"
-      color="cyan"
-      cast-shadow
-    />
-    <TresDirectionalLight
-      :position="[-70, -50, 50]"
-      :intensity="1"
-      color="#EF4444"
-      cast-shadow
-    />
-
-    <!-- Post-processing -->
-    <EffectComposerPmndrs>
-      <!-- Chromatic Aberration -->
-      <ChromaticAberrationPmndrs
-        :offset
-        radial-modulation
-        :modulation-offset="0.5"
-      />
-      <!-- Bloom -->
-      <BloomPmndrs
-        :radius="0.1"
-        :intensity="0.5"
-        :luminance-threshold="0.5"
-        :luminance-smoothing="0.75"
-        mipmap-blur
+  <transition name="fade-3d">
+    <TresCanvas
+      v-show="isReady"
+      v-bind="gl"
+      shadows
+      alpha
+      preset="realistic"
+      class="w-full h-full block"
+    >
+      <!-- Camera -->
+      <TresPerspectiveCamera
+        :fov="80"
+        :position="[0, 0, 10]"
+        :rotation="[0, 0, 0]"
       />
 
-      <!-- Vignette -->
-      <VignettePmndrs
-        :darkness="1"
-        :offset="0.4"
-        :blend-function="BlendFunction.SCREEN"
+      <!-- Directional Light -->
+      <TresDirectionalLight
+        :position="[70, 50, 50]"
+        :intensity="1"
+        color="cyan"
+        cast-shadow
       />
-      <!-- Noise -->
-      <NoisePmndrs premultiply :blend-function="BlendFunction.SCREEN" />
-    </EffectComposerPmndrs>
+      <TresDirectionalLight
+        :position="[-70, -50, 50]"
+        :intensity="1"
+        color="#EF4444"
+        cast-shadow
+      />
 
-    <!-- Hero Text -->
-    <!-- <Suspense>
+      <!-- Post-processing -->
+      <EffectComposerPmndrs>
+        <!-- Chromatic Aberration -->
+        <ChromaticAberrationPmndrs
+          :offset
+          radial-modulation
+          :modulation-offset="0.5"
+        />
+        <!-- Bloom -->
+        <BloomPmndrs
+          :radius="0.1"
+          :intensity="0.5"
+          :luminance-threshold="0.5"
+          :luminance-smoothing="0.75"
+          mipmap-blur
+        />
+
+        <!-- Vignette -->
+        <VignettePmndrs
+          :darkness="1"
+          :offset="0.4"
+          :blend-function="BlendFunction.SCREEN"
+        />
+        <!-- Noise -->
+        <NoisePmndrs premultiply :blend-function="BlendFunction.SCREEN" />
+      </EffectComposerPmndrs>
+
+      <!-- Hero Text -->
+      <!-- <Suspense>
       <ThreejsObjectsHeroText />
     </Suspense> -->
 
-    <Suspense>
-      <ThreejsObjectsFloorWithLight />
-    </Suspense>
-  </TresCanvas>
+      <Suspense>
+        <ThreejsObjectsFloorWithLight />
+      </Suspense>
+    </TresCanvas>
+  </transition>
 </template>
 
 <script setup lang="ts">
@@ -74,4 +83,21 @@ const gl = {
 };
 
 const offset = new Vector2(0.002, 0.002);
+const isReady = ref(false);
+onMounted(() => {
+  requestAnimationFrame(() => {
+    isReady.value = true;
+  });
+});
 </script>
+
+<style scoped>
+.fade-3d-enter-active,
+.fade-3d-leave-active {
+  transition: opacity 4s ease;
+}
+.fade-3d-enter-from,
+.fade-3d-leave-to {
+  opacity: 0;
+}
+</style>
