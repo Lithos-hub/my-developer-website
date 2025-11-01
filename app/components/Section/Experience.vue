@@ -143,15 +143,16 @@
 
 <script setup lang="ts">
 import { DEV_EXPERIENCE, type Experience } from "~/consts/devExperience";
-import { MONTHS } from "~/consts/months";
 
-const getMonth = (month: number) => MONTHS[month - 1];
+const { t } = useI18n();
+
+const getMonth = (month: number) => {
+  return t(`common.monthsNames.${month}`);
+};
 
 const getStartDate = ({ initialYear, initialMonth }: Experience) => {
   return `${getMonth(initialMonth)} ${initialYear}`;
 };
-
-const { t } = useI18n();
 
 const getEndDate = ({ endYear, endMonth }: Experience) => {
   return endMonth ? `${getMonth(endMonth)} ${endYear}` : t("common.present");

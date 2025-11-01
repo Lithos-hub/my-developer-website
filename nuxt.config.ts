@@ -10,12 +10,61 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "@nuxt/icon",
     "@nuxtjs/i18n",
+    "@nuxtjs/sitemap",
   ],
   tres: {
     devtools: true,
   },
   css: ["~/assets/css/main.css"],
   app: {
+    head: {
+      htmlAttrs: {
+        lang: "en",
+      },
+      meta: [
+        { charset: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        {
+          name: "description",
+          content:
+            "Carlos Segura Garcia - Software Engineer specialized in Vue.js frontend development. Portfolio showcasing web applications and projects.",
+        },
+        {
+          name: "keywords",
+          content:
+            "Carlos Segura Garcia, software engineer, frontend developer, Vue.js, Nuxt.js, web developer, portfolio",
+        },
+        { name: "author", content: "Carlos Segura Garcia" },
+        // Open Graph
+        { property: "og:type", content: "website" },
+        {
+          property: "og:title",
+          content: "Carlos Segura Garcia - Software Engineer",
+        },
+        {
+          property: "og:description",
+          content:
+            "Software Engineer specialized in Vue.js frontend development. Check out my portfolio.",
+        },
+        { property: "og:site_name", content: "Carlos Segura Garcia Portfolio" },
+        // Twitter Card
+        { name: "twitter:card", content: "summary_large_image" },
+        {
+          name: "twitter:title",
+          content: "Carlos Segura Garcia - Software Engineer",
+        },
+        {
+          name: "twitter:description",
+          content:
+            "Software Engineer specialized in Vue.js frontend development. Check out my portfolio.",
+        },
+      ],
+      link: [
+        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+        { rel: "canonical", href: "https://carlos-segura-garcia.com" },
+        { rel: "manifest", href: "/manifest.json" },
+      ],
+    },
     pageTransition: {
       name: "page",
       mode: "out-in",

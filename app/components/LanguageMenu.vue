@@ -3,7 +3,12 @@
     <div v-if="isLanguageMenuVisible" class="LanguageMenu">
       <div class="LanguageMenu__overlay" @click="closeLanguageMenu" />
       <div class="LanguageMenu__container">
-        <button class="LanguageMenu__close-button" @click="closeLanguageMenu">
+        <button
+          class="LanguageMenu__close-button"
+          @click="closeLanguageMenu"
+          aria-label="Close language menu"
+          type="button"
+        >
           <Icon name="i-mdi-close" size="30" class="LanguageMenu__close-icon" />
         </button>
         <h2 class="LanguageMenu__title">{{ $t("selectLanguage") }}</h2>
@@ -15,6 +20,8 @@
             :class="{
               'LanguageMenu__item--active': currentLanguage === lang.code,
             }"
+            :aria-label="`Select ${lang.name} language`"
+            :aria-pressed="currentLanguage === lang.code"
             @click="selectLanguage(lang.code)"
           >
             <img :src="lang.flag" :alt="lang.name" class="LanguageMenu__flag" />
@@ -100,6 +107,15 @@ const selectLanguage = async (langCode: string) => {
 
   &__close-button {
     @apply absolute right-4 top-4;
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:focus {
+      @apply outline-2 outline-secondary outline-offset-2 rounded;
+    }
   }
 
   &__close-icon {
@@ -117,6 +133,8 @@ const selectLanguage = async (langCode: string) => {
   &__item {
     @include corner-effect;
     @apply flex flex-col items-center gap-3 bg-black/50 p-6 transition-all duration-300 hover:bg-black hover:text-secondary;
+    min-height: 44px;
+    cursor: pointer;
 
     &:hover {
       @include corner-effect-secondary;
@@ -129,6 +147,10 @@ const selectLanguage = async (langCode: string) => {
       @apply bg-black text-secondary;
       background-size: 100% 100%;
       text-shadow: 0 0 0px;
+    }
+
+    &:focus {
+      @apply outline-2 outline-secondary outline-offset-2;
     }
   }
 

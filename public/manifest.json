@@ -1,0 +1,19 @@
+{
+  "name": "Carlos Segura Garcia - Software Engineer Portfolio",
+  "short_name": "CSG Portfolio",
+  "description": "Software Engineer specialized in Vue.js frontend development. Portfolio showcasing web applications and innovative projects.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#00c8ff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["portfolio", "developer", "web-development"],
+  "lang": "es"
+}

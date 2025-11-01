@@ -7,6 +7,17 @@
   </div>
 </template>
 
+<script setup lang="ts">
+const { locale } = useI18n();
+
+// Dynamic language attribute for html element
+useHead({
+  htmlAttrs: {
+    lang: locale,
+  },
+});
+</script>
+
 <style lang="scss" scoped>
 .App {
   @apply bg-cyan-950/20;

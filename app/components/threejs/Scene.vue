@@ -1,78 +1,57 @@
 <template>
-  <transition name="fade-3d">
-    <TresCanvas
-      v-show="isReady"
-      v-bind="gl"
-      :shadows="recommendedConfig.shadows"
-      alpha
-      preset="realistic"
-      class="w-full h-full block"
-    >
-      <!-- Camera -->
-      <TresPerspectiveCamera
-        :fov="80"
-        :position="[0, 0, 10]"
-        :rotation="[0, 0, 0]"
+  <TresCanvas v-bind="gl" shadows alpha preset="realistic">
+    <!-- Camera -->
+    <TresPerspectiveCamera
+      :fov="60"
+      :position="[0, 0, 10]"
+      :rotation="[0, 0, 0]"
+    />
+
+    <!-- Directional Light -->
+    <TresDirectionalLight
+      :position="[cyanLightPositionX, cyanLightPositionY, 50]"
+      :intensity="1"
+      color="cyan"
+      cast-shadow
+    />
+    <TresDirectionalLight
+      :position="[redLightPositionX, redLightPositionY, 50]"
+      :intensity="1"
+      color="#EF4444"
+      cast-shadow
+    />
+
+    <!-- Post-processing -->
+    <EffectComposerPmndrs>
+      <!-- Chromatic Aberration -->
+      <ChromaticAberrationPmndrs
+        :offset
+        radial-modulation
+        :modulation-offset="0.5"
+      />
+      <!-- Bloom -->
+      <BloomPmndrs
+        :radius="0.1"
+        :intensity="0.5"
+        :luminance-threshold="0.5"
+        :luminance-smoothing="0.75"
+        mipmap-blur
       />
 
-      <!-- Directional Light -->
-      <TresDirectionalLight
-        :position="[70, 50, 50]"
-        :intensity="1"
-        color="cyan"
-        :cast-shadow="recommendedConfig.shadows"
+      <!-- Vignette -->
+      <VignettePmndrs
+        :darkness="1"
+        :offset="0.4"
+        :blend-function="BlendFunction.SCREEN"
       />
-      <TresDirectionalLight
-        :position="[-70, -50, 50]"
-        :intensity="1"
-        color="#EF4444"
-        :cast-shadow="recommendedConfig.shadows"
-      />
+      <!-- Noise -->
+      <NoisePmndrs premultiply :blend-function="BlendFunction.SCREEN" />
+    </EffectComposerPmndrs>
 
-      <!-- Post-processing -->
-      <EffectComposerPmndrs v-if="recommendedConfig.useAdvancedPostProcessing">
-        <!-- Chromatic Aberration -->
-        <ChromaticAberrationPmndrs
-          :offset
-          radial-modulation
-          :modulation-offset="0.5"
-        />
-        <!-- Bloom -->
-        <BloomPmndrs
-          :radius="0.1"
-          :intensity="0.5"
-          :luminance-threshold="0.5"
-          :luminance-smoothing="0.75"
-          mipmap-blur
-        />
-
-        <!-- Vignette -->
-        <VignettePmndrs
-          :darkness="1"
-          :offset="0.4"
-          :blend-function="BlendFunction.SCREEN"
-        />
-        <!-- Noise -->
-        <NoisePmndrs premultiply :blend-function="BlendFunction.SCREEN" />
-      </EffectComposerPmndrs>
-
-      <!-- Post-processing for mobile -->
-      <EffectComposerPmndrs v-else>
-        <!-- Vignette (lighter) -->
-        <VignettePmndrs
-          :darkness="0.8"
-          :offset="0.4"
-          :blend-function="BlendFunction.SCREEN"
-        />
-        <!-- Noise (lighter) -->
-        <NoisePmndrs premultiply :blend-function="BlendFunction.SCREEN" />
-      </EffectComposerPmndrs>
-
-      <Suspense>
-        <ThreejsObjectsFloorWithLight />
-      </Suspense>
-    </TresCanvas>
-  </transition>
+    <Suspense>
+      <ThreejsObjectsFloorWithLight />
+    </Suspense>
+  </TresCanvas>
 </template>
 
 <script setup lang="ts">
@@ -84,30 +63,36 @@ import {
 import { BlendFunction } from "postprocessing";
 import { NoToneMapping, Vector2 } from "three";
 
-const { recommendedConfig } = useDeviceCapabilities();
-
-const gl = computed(() => ({
+const gl = {
   toneMapping: NoToneMapping,
-  multisampling: recommendedConfig.value.multisampling,
-  pixelRatio: recommendedConfig.value.pixelRatio,
-}));
+  multisampling: 8,
+};
 
 const offset = new Vector2(0.002, 0.002);
-const isReady = ref(false);
-onMounted(() => {
-  requestAnimationFrame(() => {
-    isReady.value = true;
-  });
+
+const { isMobile, isTablet } = useDeviceCapabilities();
+
+const cyanLightPositionX = computed(() => {
+  if (isMobile.value) return 20;
+  if (isTablet.value) return 30;
+  return 70; // Desktop
+});
+
+const cyanLightPositionY = computed(() => {
+  if (isMobile.value) return 33;
+  if (isTablet.value) return -50;
+  return 50; // Desktop
+});
+
+const redLightPositionX = computed(() => {
+  if (isMobile.value) return -23;
+  if (isTablet.value) return -30;
+  return -70; // Desktop
+});
+
+const redLightPositionY = computed(() => {
+  if (isMobile.value) return -30;
+  if (isTablet.value) return 50;
+  return -50; // Desktop
 });
 </script>
-
-<style scoped>
-.fade-3d-enter-active,
-.fade-3d-leave-active {
-  transition: opacity 4s ease;
-}
-.fade-3d-enter-from,
-.fade-3d-leave-to {
-  opacity: 0;
-}
-</style>

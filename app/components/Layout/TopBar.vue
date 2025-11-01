@@ -12,7 +12,7 @@
         </span>
       </div>
     </div>
-    <nav class="TopBar__center">
+    <nav class="TopBar__center" role="navigation" aria-label="Main navigation">
       <ul class="TopBar__links">
         <li
           v-for="link in sections"
@@ -23,19 +23,36 @@
               .toLowerCase()
               .includes(link.id.toLowerCase()),
           }"
+          :aria-current="
+            visibleSection.toLowerCase().includes(link.id.toLowerCase())
+              ? 'page'
+              : undefined
+          "
+          role="menuitem"
+          tabindex="0"
           @click="scrollToSection(link.path)"
+          @keydown.enter="scrollToSection(link.path)"
         >
           {{ link.title }}
         </li>
       </ul>
       <div class="TopBar__mobile-menu-button">
-        <button @click="toggleMobileMenu">
+        <button
+          @click="toggleMobileMenu"
+          aria-label="Toggle mobile menu"
+          aria-expanded="false"
+          type="button"
+        >
           <Icon name="i-mdi-menu" size="30" class="TopBar__menu-icon" />
         </button>
       </div>
     </nav>
     <div class="TopBar__right">
-      <button @click="toggleLanguageMenu">
+      <button
+        @click="toggleLanguageMenu"
+        aria-label="Change language"
+        type="button"
+      >
         <Icon name="i-mdi-translate" size="20" class="TopBar__translate-icon" />
       </button>
     </div>
@@ -115,12 +132,21 @@ const scrollToSection = (section: string) => {
   &__link {
     @include corner-effect;
     @apply relative cursor-pointer px-4 py-2 text-center font-rajdhaniMedium text-white text-xs backdrop-blur-lg;
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
       @include corner-effect-secondary;
       @apply bg-black text-secondary transition-all duration-300;
       background-size: 100% 100%;
       text-shadow: 0 0 0px;
+    }
+
+    &:focus {
+      @apply outline-2 outline-secondary outline-offset-2;
     }
   }
 
@@ -141,6 +167,18 @@ const scrollToSection = (section: string) => {
     @apply bg-black text-secondary transition-all duration-300;
     background-size: 100% 100%;
     text-shadow: 0 0 0px;
+  }
+
+  &__mobile-menu-button button {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:focus {
+      @apply outline-2 outline-secondary outline-offset-2 rounded;
+    }
   }
 }
 </style>

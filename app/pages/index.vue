@@ -2,21 +2,23 @@
   <div class="Site">
     <LayoutTopBar />
     <LanguageMenu />
-    <section ref="heroRef" id="hero">
-      <SectionHero />
-    </section>
-    <section ref="aboutRef" id="about">
-      <SectionAbout />
-    </section>
-    <section ref="summaryRef" id="summary">
-      <SectionSummary />
-    </section>
-    <section ref="experienceRef" id="experience">
-      <SectionExperience />
-    </section>
-    <section ref="portfolioRef" id="portfolio">
-      <SectionPortfolio />
-    </section>
+    <main role="main">
+      <section ref="heroRef" id="hero">
+        <SectionHero />
+      </section>
+      <section ref="aboutRef" id="about">
+        <SectionAbout />
+      </section>
+      <section ref="summaryRef" id="summary">
+        <SectionSummary />
+      </section>
+      <section ref="experienceRef" id="experience">
+        <SectionExperience />
+      </section>
+      <section ref="portfolioRef" id="portfolio">
+        <SectionPortfolio />
+      </section>
+    </main>
     <SectionFooter />
   </div>
 </template>
@@ -25,16 +27,74 @@
 import { refDebounced } from "@vueuse/core";
 import type { Section } from "~/consts/sections";
 
-// SEO metadata
-useHead({
-  title: "Carlos Segura Garcia - Software Engineer",
-  meta: [
-    {
-      name: "description",
-      content:
-        "Carlos Segura Garcia is a software engineer with a passion for building web applications.",
+const { t } = useI18n();
+
+// Reactive SEO metadata that updates when language changes
+useHead(() => {
+  const title = t("meta.title");
+  const description = t("meta.description");
+  const structuredData = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Carlos Segura Garcia",
+    jobTitle: "Software Engineer",
+    description: description,
+    url: "https://carlos-segura-garcia.com",
+    sameAs: [
+      "https://github.com/Lithos-hub",
+      "https://www.linkedin.com/in/carlos-segura-garcia/",
+    ],
+    knowsAbout: [
+      "Vue.js",
+      "Nuxt.js",
+      "TypeScript",
+      "JavaScript",
+      "Frontend Development",
+      "Web Development",
+      "React",
+      "Tailwind CSS",
+      "SCSS",
+      "Pinia",
+      "Vuex",
+      "Three.js",
+    ],
+    alumniOf: {
+      "@type": "EducationalOrganization",
+      name: "Universidad (Music History, Science, and Music Technology)",
     },
-  ],
+  });
+
+  return {
+    title,
+    meta: [
+      {
+        name: "description",
+        content: description,
+      },
+      {
+        property: "og:title",
+        content: title,
+      },
+      {
+        property: "og:description",
+        content: description,
+      },
+      {
+        name: "twitter:title",
+        content: title,
+      },
+      {
+        name: "twitter:description",
+        content: description,
+      },
+    ],
+    script: [
+      {
+        type: "application/ld+json",
+        innerHTML: structuredData,
+      },
+    ],
+  };
 });
 
 const heroRef = useTemplateRef<HTMLElement | null>("heroRef");

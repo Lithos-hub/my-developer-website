@@ -3,7 +3,12 @@
     <div v-if="isMobileMenuVisible" class="MobileMenu">
       <div class="MobileMenu__overlay" />
       <div class="MobileMenu__container">
-        <button class="MobileMenu__close-button" @click="closeMobileMenu">
+        <button
+          class="MobileMenu__close-button"
+          @click="closeMobileMenu"
+          aria-label="Close mobile menu"
+          type="button"
+        >
           <Icon name="i-mdi-close" size="30" class="MobileMenu__close-icon" />
         </button>
         <div class="MobileMenu__links">
@@ -31,6 +36,19 @@
 import { sections } from "@/consts/sections";
 const { isMobileMenuVisible, visibleSection } = storeToRefs(useUiStore());
 const { closeMobileMenu } = useUiStore();
+
+// Close menu on Escape key
+onMounted(() => {
+  const handleEscape = (e: KeyboardEvent) => {
+    if (e.key === "Escape" && isMobileMenuVisible.value) {
+      closeMobileMenu();
+    }
+  };
+  window.addEventListener("keydown", handleEscape);
+  onUnmounted(() => {
+    window.removeEventListener("keydown", handleEscape);
+  });
+});
 </script>
 
 <style lang="scss" scoped>
@@ -55,6 +73,15 @@ const { closeMobileMenu } = useUiStore();
 
   &__close-button {
     @apply absolute right-4 top-4;
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:focus {
+      @apply outline-2 outline-secondary outline-offset-2 rounded;
+    }
   }
 
   &__close-icon {

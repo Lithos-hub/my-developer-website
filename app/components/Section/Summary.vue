@@ -64,7 +64,7 @@
             <div class="Summary__tech-container">
               <img
                 src="/svg/decoration/decoration-24.svg"
-                alt="Decoration protocol image"
+                :alt="$t('common.decorationAlt')"
                 class="Summary__decoration Summary__decoration--inner-bottom"
               />
               <div
@@ -94,6 +94,8 @@ import {
   techSkills,
 } from "~/consts/devExperience";
 
+const { t } = useI18n();
+
 // Calculate total Summary in the following format: x years, y months
 const totalSummary = () => {
   const firstSummary = new Date("2021-03-01");
@@ -103,7 +105,16 @@ const totalSummary = () => {
     (currentDate.getMonth() - firstSummary.getMonth());
   const years = Math.floor(totalMonths / 12);
   const months = totalMonths % 12;
-  return `${years} years, ${months} ${months === 1 ? "month" : "months"}`;
+
+  const yearsLabel = years === 1 ? t("common.year") : t("common.years");
+  const monthsLabel = months === 1 ? t("common.month") : t("common.months");
+
+  return t("summary.experienceFormat", {
+    years,
+    yearsLabel,
+    months,
+    monthsLabel,
+  });
 };
 </script>
 

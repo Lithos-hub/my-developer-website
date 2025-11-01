@@ -1,4 +1,8 @@
 {
+  "meta": {
+    "title": "Carlos Segura Garcia - Software-Ingenieur",
+    "description": "Software-Ingenieur spezialisiert auf Frontend-Entwicklung mit Vue.js. Erkunden Sie mein Portfolio von Webanwendungen und innovativen Projekten."
+  },
   "selectLanguage": "Sprache auswählen",
   "hero": {
     "name": "Carlos Segura Garcia",
@@ -21,10 +25,12 @@
   "summary": {
     "title": "Zusammenfassung",
     "mainRole": "Hauptrolle:",
+    "mainRoleValue": "Frontend-Entwickler",
     "totalExperience": "Gesamterfahrung:",
     "mostUsedTech": "Meist verwendete Technologien:",
     "mainClientFields": "Hauptkundenbereiche:",
-    "techStack": "Technologie-Stack, mit dem ich gearbeitet habe:"
+    "techStack": "Technologie-Stack, mit dem ich gearbeitet habe:",
+    "experienceFormat": "{years} {yearsLabel}, {months} {monthsLabel}"
   },
   "experience": {
     "title": "Erfahrung",
@@ -148,7 +154,11 @@
   "footer": {
     "title": "Gemacht mit ❤️ und",
     "developedBy": "Entwickelt und designed von",
-    "location": "Standort"
+    "location": "Standort",
+    "locationValue": "Málaga - Spanien"
+  },
+  "topBar": {
+    "zone": "Zone:"
   },
   "common": {
     "version": "Version",
@@ -157,6 +167,29 @@
     "year": "Jahr",
     "years": "Jahre",
     "month": "Monat",
-    "months": "Monate"
+    "months": "Monate",
+    "developerPhoto": "Entwicklerfoto",
+    "decorationAlt": "Dekorationsbild",
+    "monthsNames": {
+      "1": "Januar",
+      "2": "Februar",
+      "3": "März",
+      "4": "April",
+      "5": "Mai",
+      "6": "Juni",
+      "7": "Juli",
+      "8": "August",
+      "9": "September",
+      "10": "Oktober",
+      "11": "November",
+      "12": "Dezember"
+    }
+  },
+  "onboarding": {
+    "attentionAlt": "Onboarding-Aufmerksamkeit",
+    "leftSeparatorAlt": "Linker Onboarding-Trennzeichen",
+    "rightSeparatorAlt": "Rechter Onboarding-Trennzeichen",
+    "floatingAlt": "Schwebendes Onboarding-Bild",
+    "tasksCompleted": "Abgeschlossene Aufgaben:"
   }
 }

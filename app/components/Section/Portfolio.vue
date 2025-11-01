@@ -27,7 +27,7 @@
               <p class="Portfolio__card-prev-title">
                 {{ $t(project.prevTitleKey) }}
               </p>
-              <h3 class="Portfolio__card-title">{{ $t(project.titleKey) }}</h3>
+              <h2 class="Portfolio__card-title">{{ $t(project.titleKey) }}</h2>
               <p class="Portfolio__card-description">
                 {{ $t(project.descriptionKey) }}
               </p>

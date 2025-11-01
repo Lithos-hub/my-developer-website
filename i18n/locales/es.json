@@ -1,4 +1,8 @@
 {
+  "meta": {
+    "title": "Carlos Segura Garcia - Ingeniero de Software",
+    "description": "Ingeniero de software especializado en desarrollo frontend con Vue.js. Explora mi portfolio de aplicaciones web y proyectos innovadores."
+  },
   "selectLanguage": "Seleccionar idioma",
   "hero": {
     "name": "Carlos Segura Garcia",
@@ -25,7 +29,8 @@
     "totalExperience": "Experiencia total:",
     "mostUsedTech": "Tecnologías más usadas:",
     "mainClientFields": "Principales sectores de clientes:",
-    "techStack": "Stack tecnológico con el que he trabajado:"
+    "techStack": "Stack tecnológico con el que he trabajado:",
+    "experienceFormat": "{years} {yearsLabel}, {months} {monthsLabel}"
   },
   "experience": {
     "title": "Experiencia",
@@ -164,7 +169,21 @@
     "month": "mes",
     "months": "meses",
     "developerPhoto": "Foto del desarrollador",
-    "decorationAlt": "Imagen decorativa"
+    "decorationAlt": "Imagen decorativa",
+    "monthsNames": {
+      "1": "Enero",
+      "2": "Febrero",
+      "3": "Marzo",
+      "4": "Abril",
+      "5": "Mayo",
+      "6": "Junio",
+      "7": "Julio",
+      "8": "Agosto",
+      "9": "Septiembre",
+      "10": "Octubre",
+      "11": "Noviembre",
+      "12": "Diciembre"
+    }
   },
   "onboarding": {
     "attentionAlt": "Atención de onboarding",

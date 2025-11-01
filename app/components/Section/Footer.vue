@@ -19,12 +19,21 @@
           <strong class="Footer__nuxt-accent">Nuxt</strong>
         </p>
         <div class="Footer__socials">
-          <a href="https://github.com/Lithos-hub" class="Footer__social">
+          <a
+            href="https://github.com/Lithos-hub"
+            class="Footer__social"
+            aria-label="Visit my GitHub profile"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Icon name="i-mdi-github" size="20" />
           </a>
           <a
             href="https://www.linkedin.com/in/carlos-segura-garcia/"
             class="Footer__social"
+            aria-label="Visit my LinkedIn profile"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <Icon name="i-mdi-linkedin" size="20" />
           </a>
@@ -91,8 +100,20 @@
     @apply flex items-center justify-center gap-5;
   }
 
-  &__social :deep(*) {
-    @apply text-white;
+  &__social {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    :deep(*) {
+      @apply text-white;
+    }
+
+    &:focus {
+      @apply outline-2 outline-secondary outline-offset-2 rounded;
+    }
   }
 
   &__location,
