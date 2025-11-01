@@ -13,31 +13,29 @@
     </div>
 
     <div class="Footer__center">
-      <div class="Footer__content">
-        <p class="Footer__title">
-          {{ $t("footer.title") }}
-          <strong class="Footer__nuxt-accent">Nuxt</strong>
-        </p>
-        <div class="Footer__socials">
-          <a
-            href="https://github.com/Lithos-hub"
-            class="Footer__social"
-            aria-label="Visit my GitHub profile"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Icon name="i-mdi-github" size="20" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/carlos-segura-garcia/"
-            class="Footer__social"
-            aria-label="Visit my LinkedIn profile"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Icon name="i-mdi-linkedin" size="20" />
-          </a>
-        </div>
+      <div class="Footer__title">
+        {{ $t("footer.title") }}
+        <strong class="Footer__nuxt-accent">Nuxt</strong>
+      </div>
+      <div class="Footer__socials">
+        <a
+          href="https://github.com/Lithos-hub"
+          class="Footer__social"
+          aria-label="Visit my GitHub profile"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon name="i-mdi-github" size="20" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/carlos-segura-garcia/"
+          class="Footer__social"
+          aria-label="Visit my LinkedIn profile"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon name="i-mdi-linkedin" size="20" />
+        </a>
       </div>
     </div>
 
@@ -65,7 +63,7 @@
 
   &__left,
   &__right {
-    @apply flex h-full w-[50vw] items-center bg-black p-2 lg:w-[10vw];
+    @apply flex h-full w-[50vw] items-center bg-black p-2 lg:w-[10vw] my-auto;
   }
 
   &__right {
@@ -73,7 +71,7 @@
   }
 
   &__center {
-    @apply flex h-auto w-full max-w-[80vw] items-center justify-center border-x border-secondary;
+    @apply flex h-auto w-full max-w-[80vw] items-center justify-between border-x border-secondary p-2;
   }
 
   &__content {
@@ -89,7 +87,7 @@
   }
 
   &__title {
-    @apply text-center font-exo text-sm text-white;
+    @apply text-center font-exo text-xs text-white self-center;
   }
 
   &__nuxt-accent {
@@ -97,7 +95,7 @@
   }
 
   &__socials {
-    @apply flex items-center justify-center gap-5;
+    @apply flex items-center justify-center;
   }
 
   &__social {

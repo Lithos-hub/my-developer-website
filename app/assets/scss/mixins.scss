@@ -67,7 +67,7 @@
 }
 
 @mixin inner-container-primary {
-  @apply relative flex w-full flex-col gap-10 border border-primary p-10 lg:mx-auto lg:max-w-6xl;
+  @apply relative flex w-full flex-col gap-10 border border-primary p-5 lg:mx-auto lg:max-w-6xl;
 
   background-image: repeating-linear-gradient(
     0deg,
@@ -80,7 +80,7 @@
   background-color: #0e0e0e;
 }
 @mixin inner-container-secondary {
-  @apply relative flex w-full flex-col gap-10 border border-secondary p-5 lg:mx-auto lg:max-w-6xl lg:p-10;
+  @apply relative flex w-full flex-col gap-10 border border-secondary p-5 lg:mx-auto lg:max-w-6xl;
 
   background-image: repeating-linear-gradient(
     0deg,

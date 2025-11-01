@@ -125,7 +125,7 @@ import { PORTFOLIO_PROJECTS } from "~/consts/portfolio";
 
   &__card {
     @include corner-effect;
-    @apply relative flex flex-col overflow-hidden bg-black/60 backdrop-blur-sm transition-all duration-300 hover:bg-black/80 hover:shadow-lg hover:shadow-secondarySoft/50;
+    @apply relative flex flex-col overflow-hidden bg-black/50 backdrop-blur-sm transition-all duration-300;
   }
 
   &__card-image-container {
