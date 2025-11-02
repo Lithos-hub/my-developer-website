@@ -37,6 +37,18 @@
     "clients": "Clients:",
     "stack": "Stack:",
     "tasks": "Tasks:",
+    "clientFields": {
+      "Banking": "Banking",
+      "Consulting": "Consulting",
+      "Energy": "Energy",
+      "Transport": "Transport",
+      "Renting": "Renting",
+      "SaaS": "SaaS",
+      "Photography": "Photography",
+      "Product": "Product",
+      "E-commerce": "E-commerce",
+      "Fashion": "Fashion"
+    },
     "roles": {
       "frontEndDeveloper": "Front-end Developer",
       "softwareEngineer": "Software Engineer"
