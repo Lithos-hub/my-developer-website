@@ -54,7 +54,7 @@
               {{ $t("summary.mainClientFields") }}
             </h2>
             <code class="Summary__info-item__value">
-              {{ getMainClientFields() }}
+              {{ getMainClientFields(t) }}
             </code>
           </li>
           <li class="Summary__info-item Summary__info-item--tech">
@@ -181,7 +181,7 @@ const totalSummary = () => {
 
   &__tech {
     &-container {
-      @apply relative flex flex-wrap items-center justify-center gap-5 bg-black p-14;
+      @apply relative grid grid-cols-5 md:grid-cols-12 items-center justify-center gap-5 bg-black p-5;
 
       clip-path: polygon(
         0 0,
@@ -199,7 +199,7 @@ const totalSummary = () => {
       @apply flex flex-col items-center gap-2;
 
       &__image {
-        @apply h-5 w-5 object-contain lg:h-10 lg:w-10;
+        @apply h-7 w-7 object-contain lg:h-10 lg:w-10;
       }
 
       &__name {

@@ -89,12 +89,12 @@ const selectLanguage = async (langCode: string) => {
   @apply fixed inset-0 z-50 flex h-screen;
 
   &__overlay {
-    @apply fixed inset-0 z-40 h-screen w-full bg-dark2/50 backdrop-blur;
+    @apply fixed inset-0 z-40 h-screen w-full bg-dark/50 backdrop-blur;
 
     &:before {
       content: "";
       @apply fixed inset-0 z-40 h-screen w-full bg-gradient-to-br from-secondarySoft/50 via-black/50 to-black/50 transition-all;
-      background-color: $dark2;
+      background-color: $dark;
       background-size: 20px 20px;
       background-image: radial-gradient(#ef444450 1px, rgba(0, 0, 0, 0.5) 1px);
     }
@@ -102,7 +102,7 @@ const selectLanguage = async (langCode: string) => {
 
   &__container {
     @include corner-effect-secondary;
-    @apply absolute left-1/2 top-1/2 z-50 flex w-full w-full h-full lg:h-auto lg:max-w-[600px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center bg-dark2 p-10;
+    @apply absolute left-1/2 top-1/2 z-50 flex w-full w-full h-full lg:h-auto lg:max-w-[600px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center bg-dark p-10;
   }
 
   &__close-button {

@@ -220,8 +220,16 @@ export const getMostUsedTech = () =>
     exp.stack.map((tech) => tech.techName)
   );
 
-export const getMainClientFields = () =>
-  getMostCommonFields(DEV_EXPERIENCE, (exp) => exp.clientFields);
+export const getMainClientFields = (t?: (key: string) => string) => {
+  const fields = getMostCommonFields(DEV_EXPERIENCE, (exp) => exp.clientFields);
+  if (!t) return fields;
+
+  // Split the fields string, translate each, and join again
+  return fields
+    .split(", ")
+    .map((field) => t(`experience.clientFields.${field}`))
+    .join(", ");
+};
 
 export const techSkills = [
   {

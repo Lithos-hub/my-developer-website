@@ -119,12 +119,12 @@
     @apply flex flex-col items-start justify-center font-lucania text-xs;
 
     &-label {
-      @apply font-lucania text-[9px] text-primary;
+      @apply font-lucania text-[7px] md:text-[9px] text-primary;
     }
 
     &-name,
     &-location {
-      @apply font-exo text-[11px] text-secondary;
+      @apply font-exo text-[8px] md:text-[10px] text-secondary;
     }
   }
 

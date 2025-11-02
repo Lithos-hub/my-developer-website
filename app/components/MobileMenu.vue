@@ -61,7 +61,7 @@ onMounted(() => {
     &:before {
       content: "";
       @apply fixed inset-0 z-40 h-screen w-full bg-gradient-to-br from-secondarySoft/50 via-black/50 to-black/50 transition-all;
-      background-color: $dark2;
+      background-color: $dark;
       background-size: 20px 20px;
       background-image: radial-gradient(#ef444450 1px, rgba(0, 0, 0, 0.5) 1px);
     }

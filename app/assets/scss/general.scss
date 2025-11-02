@@ -201,7 +201,7 @@
 
 // Info text
 @mixin mini-info-text {
-  @apply font-lucania text-[10px] text-secondary;
+  @apply font-lucania text-[7px] md:text-[9px] text-secondary;
 }
 
 .info-text {
@@ -210,7 +210,7 @@
 
 // Squares
 @mixin square-shape {
-  @apply h-1 max-h-1 min-h-1 w-1 min-w-1 max-w-1 md:h-2 md:max-h-2 md:min-h-2 md:w-2 md:min-w-2 md:max-w-2;
+  @apply h-2 max-h-2 min-h-2 w-2 min-w-2 max-w-2;
 }
 
 .square {

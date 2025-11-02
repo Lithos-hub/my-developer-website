@@ -31,7 +31,6 @@
       />
       <!-- Bloom -->
       <BloomPmndrs
-        v-if="!isMobile && !isTablet"
         :radius="0.1"
         :intensity="0.5"
         :luminance-threshold="0.5"
@@ -46,11 +45,7 @@
         :blend-function="BlendFunction.SCREEN"
       />
       <!-- Noise -->
-      <NoisePmndrs
-        v-if="!isMobile && !isTablet"
-        premultiply
-        :blend-function="BlendFunction.SCREEN"
-      />
+      <NoisePmndrs premultiply :blend-function="BlendFunction.SCREEN" />
     </EffectComposerPmndrs>
 
     <Suspense>

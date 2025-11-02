@@ -94,7 +94,7 @@ const scrollToSection = (section: string) => {
   }
 
   &__left {
-    @apply flex h-full w-[50vw] flex-col items-center justify-between bg-black p-2 font-lucania lg:w-[10vw];
+    @apply flex h-full min-w-[100px] flex-col items-center justify-between bg-black p-2 font-lucania lg:w-[10vw];
   }
 
   &__info-row {
@@ -151,7 +151,7 @@ const scrollToSection = (section: string) => {
   }
 
   &__right {
-    @apply flex h-full w-[50vw] flex-col items-center justify-center bg-black transition-all duration-300 lg:w-[10vw];
+    @apply flex h-full min-w-[100px] flex-col items-center justify-center bg-black transition-all duration-300 lg:w-[10vw];
   }
 
   &__translate-icon {

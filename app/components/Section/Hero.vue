@@ -3,7 +3,7 @@
     <div class="Hero__content">
       <ComponentName componentName="Hero.vue" color="primary" />
       <Suspense>
-        <div class="Hero__scene">
+        <div v-if="!isMobile && !isTablet" class="Hero__scene">
           <ThreejsScene />
         </div>
       </Suspense>
@@ -19,6 +19,8 @@
 </template>
 
 <script setup lang="ts">
+const { isMobile, isTablet } = useDeviceCapabilities();
+
 const scrollToPortfolio = () => {
   const portfolioSection = document.getElementById("portfolio");
   if (portfolioSection) {
@@ -37,7 +39,7 @@ const scrollToPortfolio = () => {
   }
 
   &__content {
-    @apply relative h-[80vh] w-full border-x border-secondary bg-black p-5 lg:mx-auto lg:max-w-[80vw];
+    @apply relative h-[80vh] bg-[#050505] w-full border-x border-secondary p-5 lg:mx-auto lg:max-w-[80vw];
   }
 
   &__scene {
