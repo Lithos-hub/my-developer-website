@@ -112,6 +112,10 @@ export default defineNuxtConfig({
     ],
     strategy: "no_prefix",
   },
+  devServer: {
+    host: "0.0.0.0",
+    port: 3000,
+  },
   vite: {
     plugins: [glsl()],
     css: {
