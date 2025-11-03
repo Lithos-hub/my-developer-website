@@ -327,7 +327,7 @@ const getEndDate = ({ endYear, endMonth }: Experience) => {
   }
 
   &__stack-items {
-    @apply grid grid-cols-4 gap-1;
+    @apply grid grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-1;
   }
 
   &__stack-item {
