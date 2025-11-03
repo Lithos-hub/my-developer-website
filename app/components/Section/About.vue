@@ -1,5 +1,5 @@
 <template>
-  <div class="About__container">
+  <div class="About">
     <div class="About__content">
       <img
         src="/svg/decoration/decoration-6.svg"
@@ -106,10 +106,7 @@ const techLogos: TechLogo[] = [
 
 <style lang="scss" scoped>
 .About {
-  &__container {
-    @include section-container;
-  }
-
+  @apply border-b border-secondary;
   &__content {
     @include section-content-secondary;
   }
@@ -120,10 +117,12 @@ const techLogos: TechLogo[] = [
 
   &__title {
     @include section-title-secondary;
+    text-shadow: 0 0 2px rgb(255, 0, 0), 0 0 4px magenta;
   }
 
   &__text {
-    @apply z-10 flex w-full flex-col items-center justify-center gap-10;
+    @apply z-10 flex w-full flex-col items-center justify-center gap-10 font-bold;
+    text-shadow: 0 0 2px rgb(255, 0, 0), 0 0 4px magenta;
   }
 
   &__decoration {
@@ -155,11 +154,13 @@ const techLogos: TechLogo[] = [
   }
 
   &__description {
-    @apply text-center font-rajdhaniLight text-xl leading-relaxed text-secondarySoft;
+    @apply text-center font-rajdhaniRegular text-xl leading-relaxed text-secondarySoft;
   }
 
   &__description-vue {
     @apply vue-gradient-text text-2xl font-bold;
+
+    text-shadow: 0 0 2px white;
   }
 
   &__logos {

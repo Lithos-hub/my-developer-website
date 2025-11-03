@@ -119,11 +119,16 @@ const selectLanguage = async (langCode: string) => {
   }
 
   &__close-icon {
-    @apply text-secondarySoft;
+    @apply text-secondarySoft transition-all duration-200;
+
+    &:hover {
+      @apply scale-125 text-secondary;
+    }
   }
 
   &__title {
     @apply mb-8 font-rajdhaniSemiBold text-2xl text-white;
+    @include neon-text-neutral;
   }
 
   &__grid {
@@ -131,7 +136,7 @@ const selectLanguage = async (langCode: string) => {
   }
 
   &__item {
-    @include corner-effect;
+    @include corner-effect-primary;
     @apply flex flex-col items-center gap-3 bg-black/50 p-6 transition-all duration-300 hover:bg-black hover:text-secondary;
     min-height: 44px;
     cursor: pointer;
@@ -160,6 +165,7 @@ const selectLanguage = async (langCode: string) => {
 
   &__name {
     @apply font-rajdhaniMedium text-base text-white;
+    @include neon-text-neutral;
   }
 }
 

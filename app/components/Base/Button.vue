@@ -34,11 +34,11 @@ const props = withDefaults(defineProps<ButtonProps>(), {
     content: "";
     @apply absolute inset-0 -z-0 h-full w-full bg-black/90;
     clip-path: $clip-button;
-    background-size: 3px 3px;
+    background-size: 5px 5px;
     background-image: repeating-linear-gradient(
       0deg,
       $gradient-primary,
-      $gradient-primary 1px,
+      $gradient-primary 2px,
       $gradient-black 1px,
       $gradient-black
     );
@@ -93,13 +93,12 @@ const props = withDefaults(defineProps<ButtonProps>(), {
 
       &::after {
         @apply transition-all duration-300 ease-in-out;
-        background-size: 5px 5px;
+        background-size: 10px 10px;
         background-image: repeating-linear-gradient(
           45deg,
           $gradient-primary,
-          $gradient-primary 1px,
-          rgba(255, 255, 255, 0.1) 1px,
-          $gradient-black 50%
+          $gradient-black 1px,
+          transparent 50%
         );
       }
     }
@@ -116,8 +115,8 @@ const props = withDefaults(defineProps<ButtonProps>(), {
       @apply bg-black/90;
       background-image: repeating-linear-gradient(
         0deg,
-        $gradient-primary,
-        $gradient-primary 1px,
+        $gradient-secondary,
+        $gradient-secondary 1px,
         $gradient-black 1px,
         $gradient-black
       );
@@ -145,12 +144,12 @@ const props = withDefaults(defineProps<ButtonProps>(), {
 
       &::after {
         @apply transition-all duration-300 ease-in-out;
-        background-size: 5px 5px;
+        background-size: 10px 10px;
         background-image: repeating-linear-gradient(
           45deg,
           $gradient-secondary,
           $gradient-secondary 1px,
-          rgba(255, 255, 255, 0.1) 1px,
+          $gradient-black 1px,
           $gradient-black 50%
         );
       }

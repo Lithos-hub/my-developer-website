@@ -23,13 +23,15 @@ withDefaults(defineProps<ComponentNameProps>(), {
 
 <style lang="scss" scoped>
 .ComponentName {
-  @apply absolute right-5 top-5 z-10 font-lucania text-[9px];
+  @apply absolute right-5 top-5 z-10 font-lucania text-[10px];
 
   &--primary {
+    @include chromatic-aberration-primary;
     @apply text-primary;
   }
 
   &--secondary {
+    @include chromatic-aberration-secondary;
     @apply text-secondary;
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="Summary__container" id="summary">
+  <div class="Summary" id="summary">
     <div class="Summary__content">
       <img
         src="/svg/decoration/decoration-8.svg"
@@ -62,6 +62,7 @@
               {{ $t("summary.techStack") }}
             </h2>
             <div class="Summary__tech-container">
+              <CTREffect />
               <img
                 src="/svg/decoration/decoration-24.svg"
                 :alt="$t('common.decorationAlt')"
@@ -120,10 +121,7 @@ const totalSummary = () => {
 
 <style lang="scss" scoped>
 .Summary {
-  &__container {
-    @include section-container;
-  }
-
+  @apply border-b border-primary;
   &__content {
     @include section-content-primary;
   }
@@ -166,10 +164,12 @@ const totalSummary = () => {
     &-item {
       @apply flex flex-col gap-2;
       &__title {
+        @include chromatic-aberration-neutral;
         @apply font-orbitron text-xl font-bold text-white;
       }
 
       &__value {
+        @include chromatic-aberration-primary;
         @apply font-rajdhaniSemiBold text-xl text-cyan-400;
       }
 
@@ -203,6 +203,7 @@ const totalSummary = () => {
       }
 
       &__name {
+        @include neon-text-primary;
         @apply font-exo text-xs text-primary;
       }
     }

@@ -13,6 +13,7 @@ interface SectionData {
   title: string;
   componentName: string;
   path: string;
+  color: "primary" | "secondary" | "neutral";
 }
 
 export const sections: Record<Section, SectionData> = {
@@ -22,6 +23,7 @@ export const sections: Record<Section, SectionData> = {
     title: "<Hero />",
     componentName: "Hero.vue",
     path: "#hero",
+    color: "neutral",
   },
   about: {
     id: "about",
@@ -29,6 +31,7 @@ export const sections: Record<Section, SectionData> = {
     title: "<About />",
     componentName: "About.vue",
     path: "#about",
+    color: "secondary",
   },
   summary: {
     id: "summary",
@@ -36,6 +39,7 @@ export const sections: Record<Section, SectionData> = {
     title: "<Summary />",
     componentName: "Summary.vue",
     path: "#summary",
+    color: "primary",
   },
   experience: {
     id: "experience",
@@ -43,6 +47,7 @@ export const sections: Record<Section, SectionData> = {
     title: "<Experience />",
     componentName: "Experience.vue",
     path: "#experience",
+    color: "secondary",
   },
   portfolio: {
     id: "portfolio",
@@ -50,5 +55,6 @@ export const sections: Record<Section, SectionData> = {
     title: "<Portfolio />",
     componentName: "Portfolio.vue",
     path: "#portfolio",
+    color: "primary",
   },
 };

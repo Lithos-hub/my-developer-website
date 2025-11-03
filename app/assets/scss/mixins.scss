@@ -1,15 +1,13 @@
 @use "./variables.scss" as *;
 
-@mixin section-container {
-  @apply border-b border-secondary;
-}
-
 @mixin section-content {
-  @apply relative z-10 w-full border-x border-secondary bg-black px-2.5 py-[200px] lg:mx-auto lg:max-w-[80vw] lg:px-5;
+  @apply relative z-10 w-full border-x bg-black px-2.5 py-[200px] lg:mx-auto lg:max-w-[80vw] lg:px-5;
 }
 
 @mixin section-content-primary {
   @include section-content;
+
+  border-color: $primary;
 
   background: radial-gradient($primary20 2%, transparent 3%),
     repeating-linear-gradient(
@@ -39,6 +37,8 @@
 
 @mixin section-content-secondary {
   @include section-content;
+
+  border-color: $secondary;
 
   background: radial-gradient($secondary20 2%, transparent 3%),
     repeating-linear-gradient(
@@ -95,8 +95,37 @@
 
 @mixin section-title-secondary {
   @apply relative z-10 font-orbitron text-2xl font-bold text-secondary;
+  text-shadow: 0 0 2px red, 0 0 4px magenta;
 }
 
 @mixin section-title-primary {
   @apply relative z-10 font-orbitron text-2xl font-bold text-primary;
+  text-shadow: 0 0 2px blue, 0 0 4px cyan;
+}
+
+@mixin chromatic-aberration-neutral {
+  text-shadow: 0.06rem 0 0.06rem rgb(255, 0, 0),
+    -0.125rem 0 0.06rem rgb(132, 0, 255);
+}
+
+@mixin chromatic-aberration-primary {
+  text-shadow: 0.06rem 0 0.06rem rgb(255, 0, 0),
+    -0.125rem 0 0.06rem rgb(89, 0, 255);
+}
+
+@mixin chromatic-aberration-secondary {
+  text-shadow: 0.06rem 0 0.06rem rgb(214, 18, 18),
+    0.1rem 1px 0.06rem rgba(45, 33, 223, 0.822);
+}
+
+@mixin neon-text-primary {
+  text-shadow: 0 0 2px blue, 0 0 4px cyan;
+}
+
+@mixin neon-text-secondary {
+  text-shadow: 0 0 2px red, 0 0 4px magenta;
+}
+
+@mixin neon-text-neutral {
+  text-shadow: 0 0 2px white, 0 0 4px white;
 }

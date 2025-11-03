@@ -1,5 +1,6 @@
 @use "./fonts.scss" as *;
 @use "./variables.scss" as *;
+@use "./mixins.scss" as *;
 
 .vue-gradient-text {
   background: -webkit-linear-gradient(315deg, #42d392 25%, #647eff);
@@ -15,7 +16,31 @@
   @apply relative h-screen w-full;
 }
 
-@mixin corner-effect {
+@mixin corner-effect-neutral {
+  $corner-color: #ffffff;
+
+  @apply bg-[length:5px_5px] bg-no-repeat;
+
+  background-position: 0 0, 0 0, 100% 0, 100% 0, 0 100%, 0 100%, 100% 100%,
+    100% 100%;
+
+  box-shadow: 0 0 10px #04464015;
+
+  background-image: linear-gradient(
+      to right,
+      $corner-color 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, $corner-color 1px, transparent 1px),
+    linear-gradient(to left, $corner-color 1px, transparent 1px),
+    linear-gradient(to bottom, $corner-color 1px, transparent 1px),
+    linear-gradient(to right, $corner-color 1px, transparent 1px),
+    linear-gradient(to top, $corner-color 1px, transparent 1px),
+    linear-gradient(to left, $corner-color 1px, transparent 1px),
+    linear-gradient(to top, $corner-color 1px, transparent 1px);
+}
+
+@mixin corner-effect-primary {
   $corner-color: $primary;
 
   @apply bg-[length:5px_5px] bg-no-repeat;
@@ -206,6 +231,22 @@
 
 .info-text {
   @include mini-info-text;
+  @apply transition-all duration-300;
+
+  &--primary {
+    @apply text-primary;
+    @include neon-text-primary;
+  }
+
+  &--secondary {
+    @apply text-secondary;
+    @include neon-text-secondary;
+  }
+
+  &--neutral {
+    @apply text-white;
+    @include neon-text-neutral;
+  }
 }
 
 // Squares

@@ -93,7 +93,7 @@ onMounted(() => {
   }
 
   &__link {
-    @include corner-effect;
+    @include corner-effect-primary;
     @apply relative w-[250px] py-2 text-center font-jetbrainsMono text-[12px] backdrop-blur-lg;
 
     &--active {

@@ -1,25 +1,25 @@
 <template>
-  <div class="experience">
-    <div class="experience__content">
+  <div class="Experience">
+    <div class="Experience__content">
       <img
         src="/svg/decoration/decoration-11.svg"
         :alt="$t('common.decorationAlt')"
-        class="experience__decoration experience__decoration--top-left"
+        class="Experience__decoration Experience__decoration--top-left"
       />
       <ComponentName componentName="Experience.vue" color="secondary" />
-      <div class="experience__inner-container">
+      <div class="Experience__inner-container">
         <img
           src="/svg/decoration/decoration-13.svg"
           :alt="$t('common.decorationAlt')"
-          class="experience__decoration experience__decoration--top-center"
+          class="Experience__decoration Experience__decoration--top-center"
         />
         <img
           src="/svg/decoration/decoration-10.svg"
           :alt="$t('common.decorationAlt')"
-          class="experience__decoration experience__decoration--top-right"
+          class="Experience__decoration Experience__decoration--top-right"
         />
-        <h1 class="experience__title">{{ $t("experience.title") }}</h1>
-        <div class="experience__list">
+        <h1 class="Experience__title">{{ $t("experience.title") }}</h1>
+        <div class="Experience__list">
           <article
             v-for="experience in DEV_EXPERIENCE"
             :key="`Experience-${experience.roleKey}-${experience.subtitle}`"
@@ -160,9 +160,8 @@ const getEndDate = ({ endYear, endMonth }: Experience) => {
 </script>
 
 <style lang="scss" scoped>
-.experience {
-  @include section-container;
-
+.Experience {
+  @apply border-b border-secondary;
   &__content {
     @include section-content-secondary;
   }
@@ -206,7 +205,8 @@ const getEndDate = ({ endYear, endMonth }: Experience) => {
   @apply relative flex min-h-[600px] w-full flex-col bg-black/50 lg:flex-row;
 
   &__index-and-date {
-    @apply relative flex w-full flex-col p-5 font-orbitron font-extrabold text-secondary/80 lg:w-[300px] lg:gap-10;
+    @include chromatic-aberration-secondary;
+    @apply relative flex w-full flex-col p-5 bg-black font-orbitron font-extrabold text-secondary/80 lg:w-[300px] lg:gap-10;
   }
 
   &__decoration {
@@ -279,7 +279,7 @@ const getEndDate = ({ endYear, endMonth }: Experience) => {
   }
 
   &__content {
-    @apply flex flex-1 flex-col gap-5 border-secondary bg-stone-950 p-5 pb-10 backdrop-blur-lg;
+    @apply flex flex-1 flex-col gap-5 border-secondary bg-black/10 p-5 pb-10 backdrop-blur-lg;
 
     &:not(:last-child) {
       @apply border-b;
@@ -299,14 +299,17 @@ const getEndDate = ({ endYear, endMonth }: Experience) => {
   }
 
   &__role {
+    @include chromatic-aberration-secondary;
     @apply font-rajdhaniSemiBold text-xl font-bold text-secondary;
   }
 
   &__company {
+    @include neon-text-neutral;
     @apply font-rajdhaniLight text-base text-white;
   }
 
   &__clients {
+    @include chromatic-aberration-secondary;
     @apply flex flex-col gap-1;
   }
 
@@ -315,6 +318,7 @@ const getEndDate = ({ endYear, endMonth }: Experience) => {
   }
 
   &__label {
+    @include chromatic-aberration-secondary;
     @apply font-orbitron text-sm font-bold text-secondary;
   }
 
@@ -327,7 +331,7 @@ const getEndDate = ({ endYear, endMonth }: Experience) => {
   }
 
   &__stack-item {
-    @include corner-effect;
+    @include corner-effect-primary;
     @apply flex w-full items-center gap-1 bg-stone-900/50 p-2;
   }
 
@@ -336,10 +340,12 @@ const getEndDate = ({ endYear, endMonth }: Experience) => {
   }
 
   &__stack-name {
+    @include chromatic-aberration-neutral;
     @apply font-exo text-[10px] text-white;
   }
 
   &__tasks {
+    @include chromatic-aberration-secondary;
     @apply flex flex-col gap-2;
   }
 
@@ -352,11 +358,12 @@ const getEndDate = ({ endYear, endMonth }: Experience) => {
   }
 
   &__task-bullet {
-    @include corner-effect;
+    @include corner-effect-primary;
     @apply h-2 w-2 bg-transparent p-1;
   }
 
   &__task-text {
+    @include neon-text-neutral;
     @apply font-rajdhaniMedium text-sm text-white;
   }
 }

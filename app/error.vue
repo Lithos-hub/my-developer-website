@@ -1,11 +1,10 @@
 <template>
   <div class="Error404">
+    <CTREffect />
     <div class="Error404__container">
       <div class="Error404__content">
-        <!-- Componente técnico -->
         <ComponentName componentName="[...all].vue" color="secondary" />
 
-        <!-- Mensaje principal -->
         <div class="Error404__main-content">
           <h1 class="Error404__title">
             <span
@@ -28,7 +27,6 @@
             >
           </p>
 
-          <!-- Action button -->
           <div class="Error404__actions">
             <BaseButton
               variant="primary"
@@ -40,7 +38,6 @@
             </BaseButton>
           </div>
 
-          <!-- Error connection message -->
           <span
             class="Error404__connection-error"
             data-text="Connection error detected."
@@ -53,9 +50,15 @@
 </template>
 
 <script setup lang="ts">
+import type { NuxtError } from "#app";
+
+const props = defineProps({
+  error: Object as () => NuxtError,
+});
+
 // SEO metadata
 useHead(() => ({
-  status: 404,
+  status: props.error?.statusCode,
   title: "Page not found",
   meta: [
     {
@@ -73,7 +76,7 @@ const goBack = () => {
 
 <style lang="scss" scoped>
 .Error404 {
-  @apply h-screen w-screen bg-gradient-to-br from-secondarySoft/10 via-black/50 to-black/50;
+  @apply h-screen w-screen bg-black;
 
   &__container {
     @apply relative h-full w-full bg-black/50;

@@ -71,7 +71,7 @@
   }
 
   &__center {
-    @apply flex h-auto w-full max-w-[80vw] items-center justify-between border-x border-secondary p-2;
+    @apply flex h-auto w-full max-w-[80vw] items-center justify-between border-x border-primary p-2;
   }
 
   &__content {
@@ -87,10 +87,12 @@
   }
 
   &__title {
+    @include chromatic-aberration-secondary;
     @apply text-center font-exo text-xs text-white self-center;
   }
 
   &__nuxt-accent {
+    @include chromatic-aberration-primary;
     @apply font-bold text-green-500;
   }
 
@@ -109,8 +111,8 @@
       @apply text-white;
     }
 
-    &:focus {
-      @apply outline-2 outline-secondary outline-offset-2 rounded;
+    :hover {
+      @apply scale-125 transition-all duration-200 text-primary;
     }
   }
 
@@ -119,11 +121,13 @@
     @apply flex flex-col items-start justify-center font-lucania text-xs;
 
     &-label {
+      @include chromatic-aberration-neutral;
       @apply font-lucania text-[7px] md:text-[9px] text-primary;
     }
 
     &-name,
     &-location {
+      @include chromatic-aberration-secondary;
       @apply font-exo text-[8px] md:text-[10px] text-secondary;
     }
   }

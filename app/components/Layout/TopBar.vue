@@ -1,18 +1,35 @@
 <template>
-  <header class="TopBar">
+  <header class="TopBar" :class="`TopBar--${visualDataBySection?.color}`">
     <div class="TopBar__left">
       <div class="TopBar__info-row">
-        <div class="triangle-shape-top-left TopBar__triangle" />
-        <span class="info-text">{{ visualDataBySection?.componentName }} </span>
+        <div
+          class="triangle-shape-top-left TopBar__triangle"
+          :class="`TopBar__triangle--${visualDataBySection?.color}`"
+        />
+        <span
+          class="info-text"
+          :class="`info-text--${visualDataBySection?.color}`"
+          >{{ visualDataBySection?.componentName }}
+        </span>
       </div>
       <div class="TopBar__info-row">
-        <div class="triangle-shape-top-left TopBar__triangle" />
-        <span class="info-text"
+        <div
+          class="triangle-shape-top-left TopBar__triangle"
+          :class="`TopBar__triangle--${visualDataBySection?.color}`"
+        />
+        <span
+          class="info-text"
+          :class="`info-text--${visualDataBySection?.color}`"
           >{{ $t("topBar.zone") }} {{ visualDataBySection?.code }}
         </span>
       </div>
     </div>
-    <nav class="TopBar__center" role="navigation" aria-label="Main navigation">
+    <nav
+      class="TopBar__center"
+      :class="`TopBar__center--${visualDataBySection?.color}`"
+      role="navigation"
+      aria-label="Main navigation"
+    >
       <ul class="TopBar__links">
         <li
           v-for="link in sections"
@@ -22,6 +39,10 @@
             'TopBar__link--active': visibleSection
               .toLowerCase()
               .includes(link.id.toLowerCase()),
+            'TopBar__link--neutral': visualDataBySection?.color === 'neutral',
+            'TopBar__link--primary': visualDataBySection?.color === 'primary',
+            'TopBar__link--secondary':
+              visualDataBySection?.color === 'secondary',
           }"
           :aria-current="
             visibleSection.toLowerCase().includes(link.id.toLowerCase())
@@ -53,7 +74,12 @@
         aria-label="Change language"
         type="button"
       >
-        <Icon name="i-mdi-translate" size="20" class="TopBar__translate-icon" />
+        <Icon
+          name="i-mdi-translate"
+          size="20"
+          class="TopBar__translate-icon"
+          :class="`TopBar__translate-icon--${visualDataBySection?.color}`"
+        />
       </button>
     </div>
   </header>
@@ -66,7 +92,7 @@ const { toggleLanguageMenu, toggleMobileMenu } = useUiStore();
 
 const TOPBAR_HEIGHT = 60;
 
-const scrollToSection = (section: string) => {
+function scrollToSection(section: string): void {
   const element = document.querySelector(section);
   if (element) {
     const elementPosition =
@@ -78,12 +104,24 @@ const scrollToSection = (section: string) => {
       behavior: "smooth",
     });
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
 .TopBar {
-  @apply sticky top-0 z-20 flex h-[60px] w-full items-center justify-between border-b border-secondary;
+  @apply sticky top-0 z-20 flex h-[60px] w-full items-center justify-between border-b border-secondary transition-all duration-300;
+
+  &--neutral {
+    @apply border-white;
+  }
+
+  &--primary {
+    @apply border-primary;
+  }
+
+  &--secondary {
+    @apply border-secondary;
+  }
 
   @media mobile {
     padding: $mobile-margin;
@@ -102,11 +140,36 @@ const scrollToSection = (section: string) => {
   }
 
   &__triangle {
-    @apply bg-primary;
+    &--primary {
+      @apply bg-primary;
+    }
+
+    &--secondary {
+      @apply bg-secondary;
+    }
+
+    &--neutral {
+      @apply bg-white;
+    }
   }
 
   &__center {
-    @apply mx-auto flex h-full w-full max-w-[80vw] items-center justify-center border-x border-secondary backdrop-blur-lg;
+    @apply mx-auto flex h-full w-full max-w-[80vw] items-center justify-center border-x backdrop-blur-lg;
+
+    &--primary {
+      @apply border-primary;
+      @include neon-text-primary;
+    }
+
+    &--secondary {
+      @apply border-secondary;
+      @include neon-text-secondary;
+    }
+
+    &--neutral {
+      @apply border-white;
+      @include neon-text-neutral;
+    }
   }
 
   &__mobile-menu-button {
@@ -130,17 +193,46 @@ const scrollToSection = (section: string) => {
   }
 
   &__link {
-    @include corner-effect;
-    @apply relative cursor-pointer px-4 py-2 text-center font-rajdhaniMedium text-white text-xs backdrop-blur-lg;
+    @apply relative cursor-pointer px-4 py-2 text-center font-rajdhaniMedium text-xs backdrop-blur-lg;
     min-height: 44px;
     min-width: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    &:hover {
+    &--neutral {
+      @include corner-effect-neutral;
+      @apply text-white;
+
+      &:hover {
+        @include corner-effect-neutral;
+        @apply text-white;
+        background-size: 100% 100%;
+        text-shadow: 0 0 0px;
+      }
+    }
+
+    &--primary {
+      @include corner-effect-primary;
+      @apply text-primary;
+
+      &:hover {
+        @include corner-effect-primary;
+      }
+    }
+
+    &--secondary {
       @include corner-effect-secondary;
-      @apply bg-black text-secondary transition-all duration-300;
+      @apply text-secondary;
+
+      &:hover {
+        @include corner-effect-secondary;
+        @apply text-secondary;
+      }
+    }
+
+    &:hover {
+      @apply bg-black transition-all duration-300;
       background-size: 100% 100%;
       text-shadow: 0 0 0px;
     }
@@ -158,15 +250,41 @@ const scrollToSection = (section: string) => {
     @apply text-white transition-all duration-300;
 
     &:hover {
+      @apply scale-125;
+    }
+
+    &--primary {
+      @apply text-primary;
+    }
+
+    &--secondary {
       @apply text-secondary;
+    }
+
+    &--neutral {
+      @apply text-white;
     }
   }
 
   &__link--active {
-    @include corner-effect-secondary;
-    @apply bg-black text-secondary transition-all duration-300;
+    @apply transition-all duration-300 bg-black;
     background-size: 100% 100%;
     text-shadow: 0 0 0px;
+
+    &--primary {
+      @include corner-effect-primary;
+      @apply bg-primary text-primary;
+    }
+
+    &--secondary {
+      @include corner-effect-secondary;
+      @apply bg-secondary text-secondary;
+    }
+
+    &--neutral {
+      @include corner-effect-neutral;
+      @apply bg-white text-white;
+    }
   }
 
   &__mobile-menu-button button {

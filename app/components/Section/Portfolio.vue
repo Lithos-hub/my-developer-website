@@ -1,5 +1,5 @@
 <template>
-  <div class="Portfolio__container" id="Portfolio">
+  <div class="Portfolio" id="Portfolio">
     <div class="Portfolio__content">
       <ComponentName componentName="Portfolio.vue" color="primary" />
       <div class="Portfolio__inner-container">
@@ -93,10 +93,7 @@ import { PORTFOLIO_PROJECTS } from "~/consts/portfolio";
 
 <style lang="scss" scoped>
 .Portfolio {
-  &__container {
-    @include section-container;
-  }
-
+  @apply border-b border-primary;
   &__content {
     @include section-content-primary;
   }
@@ -124,7 +121,7 @@ import { PORTFOLIO_PROJECTS } from "~/consts/portfolio";
   }
 
   &__card {
-    @include corner-effect;
+    @include corner-effect-primary;
     @apply relative flex flex-col overflow-hidden bg-black/50 backdrop-blur-sm transition-all duration-300;
   }
 
@@ -141,14 +138,17 @@ import { PORTFOLIO_PROJECTS } from "~/consts/portfolio";
   }
 
   &__card-prev-title {
+    @include chromatic-aberration-secondary;
     @apply font-orbitron text-xs font-bold uppercase tracking-wider text-secondary;
   }
 
   &__card-title {
+    @include chromatic-aberration-neutral;
     @apply font-rajdhaniSemiBold text-lg font-bold text-white;
   }
 
   &__card-description {
+    @include chromatic-aberration-secondary;
     @apply font-rajdhaniMedium text-sm leading-relaxed text-gray-300;
   }
 

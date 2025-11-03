@@ -1,5 +1,6 @@
 <template>
   <div class="App">
+    <CTREffect />
     <WhiteNoise />
     <MobileMenu />
 
@@ -22,13 +23,13 @@ useHead({
 .App {
   @apply bg-cyan-950/20;
 
-  &__radial-gradient-background {
-    background: radial-gradient(
-      circle,
-      $gradient-primary-radial-start-color 0%,
-      $gradient-radial-end-color 100%
-    );
-    animation: pulseGradient 8s ease-in-out infinite;
+  &::after {
+    content: "";
+    @apply fixed inset-0 z-[9999] h-screen w-full bg-transparent opacity-20;
+
+    pointer-events: none;
+    background: radial-gradient(circle, transparent 80%, #00000050 100%);
+    animation: pulseGradient 9s ease-in-out infinite;
   }
 }
 </style>

@@ -11,9 +11,9 @@
       <h1 class="Hero__title">{{ $t("hero.name") }}</h1>
       <h2 class="Hero__subtitle">{{ $t("hero.title") }}</h2>
 
-      <BaseButton class="Hero__button-container" @click="scrollToPortfolio">{{
-        $t("hero.button")
-      }}</BaseButton>
+      <BaseButton class="Hero__button-container" @click="scrollToPortfolio">
+        {{ $t("hero.button") }}</BaseButton
+      >
     </div>
   </div>
 </template>
@@ -35,11 +35,11 @@ const scrollToPortfolio = () => {
 
 .Hero {
   &__container {
-    @apply relative border-b border-secondary;
+    @apply relative border-b border-white;
   }
 
   &__content {
-    @apply relative h-[80vh] bg-[#050505] w-full border-x border-secondary p-5 lg:mx-auto lg:max-w-[80vw];
+    @apply relative h-[calc(100vh-60px)] bg-[#050505] w-full p-5 lg:mx-auto lg:max-w-[80vw] border-x border-white;
   }
 
   &__scene {
@@ -47,10 +47,12 @@ const scrollToPortfolio = () => {
   }
 
   &__title {
+    @include neon-text-primary;
     @apply absolute left-5 top-5 text-center font-rajdhaniLight text-3xl leading-tight text-primary lg:text-[45px];
   }
 
   &__subtitle {
+    @include neon-text-secondary;
     @apply absolute bottom-5 right-5 text-center font-rajdhaniLight text-lg font-bold leading-tight text-secondary lg:text-[25px];
   }
 
