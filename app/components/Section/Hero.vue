@@ -3,7 +3,7 @@
     <div class="Hero__content">
       <ComponentName componentName="Hero.vue" color="primary" />
       <Suspense>
-        <div v-if="!isMobile && !isTablet" class="Hero__scene">
+        <div class="Hero__scene" v-if="!isMobile && !isTablet">
           <ThreejsScene />
         </div>
       </Suspense>
@@ -39,7 +39,7 @@ const scrollToPortfolio = () => {
   }
 
   &__content {
-    @apply relative h-[calc(100vh-60px)] bg-[#050505] w-full p-5 lg:mx-auto lg:max-w-[80vw] border-x border-white;
+    @apply relative h-[calc(100vh-60px)] bg-black w-full p-5 lg:mx-auto lg:max-w-[80vw] border-x border-white;
   }
 
   &__scene {

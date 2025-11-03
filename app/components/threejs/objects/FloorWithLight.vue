@@ -106,7 +106,7 @@ onMounted(async () => {
 // Configuration for cube distribution
 const cubeSize = 1; // Cube size
 const cubeSpacing = 1.005; // Cube spacing
-const numberOfCubes = 500; // Total number of cubes
+const numberOfCubes = 1000; // Total number of cubes
 
 // Z movement configuration
 const cubeZConfig = ref(

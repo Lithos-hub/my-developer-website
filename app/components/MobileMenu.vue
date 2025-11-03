@@ -85,11 +85,14 @@ onMounted(() => {
   }
 
   &__close-icon {
-    @apply text-2xl font-bold text-primary;
+    @apply text-2xl font-bold text-primary transition-all duration-300;
+    &:hover {
+      @apply scale-125 text-secondary;
+    }
   }
 
   &__links {
-    @apply flex flex-col items-center gap-20;
+    @apply flex flex-col items-center gap-10;
   }
 
   &__link {
