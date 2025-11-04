@@ -62,7 +62,7 @@
               {{ $t("summary.techStack") }}
             </h2>
             <div class="Summary__tech-container">
-              <CTREffect />
+              <CRTEffect />
               <img
                 src="/svg/decoration/decoration-24.svg"
                 :alt="$t('common.decorationAlt')"

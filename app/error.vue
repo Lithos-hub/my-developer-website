@@ -1,6 +1,6 @@
 <template>
   <div class="Error404">
-    <CTREffect />
+    <CRTEffect />
     <div class="Error404__container">
       <div class="Error404__content">
         <ComponentName componentName="[...all].vue" color="secondary" />

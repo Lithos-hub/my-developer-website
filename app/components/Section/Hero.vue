@@ -4,7 +4,7 @@
       <ComponentName componentName="Hero.vue" color="primary" />
       <Suspense>
         <div class="Hero__scene" v-if="!isMobile && !isTablet">
-          <ThreejsScene />
+          <ThreejsHeroScene />
         </div>
       </Suspense>
 

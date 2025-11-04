@@ -2,7 +2,7 @@
   <div class="App">
     <TVTurnOnEffect ref="tvTurnOnEffectRef" />
 
-    <CTREffect />
+    <CRTEffect />
     <WhiteNoise />
     <MobileMenu />
     <NuxtPage />
