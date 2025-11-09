@@ -1,7 +1,11 @@
 <template>
   <div class="Portfolio" id="Portfolio">
     <div class="Portfolio__content">
-      <ComponentName componentName="Portfolio.vue" color="primary" />
+      <ComponentName
+        componentName="Portfolio.vue"
+        color="primary"
+        japaneseName="ポートフォリオ"
+      />
       <div class="Portfolio__inner-container">
         <img
           src="/svg/decoration/decoration-21.svg"

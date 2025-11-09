@@ -3,7 +3,13 @@
     <CRTEffect />
     <div class="Error404__container">
       <div class="Error404__content">
-        <ComponentName componentName="[...all].vue" color="secondary" />
+        <ComponentName
+          componentName="[...all].vue"
+          color="secondary"
+          japaneseName="エラー"
+        />
+
+        <div class="Error404__japanese-text">ページが見つかりません</div>
 
         <div class="Error404__main-content">
           <h1 class="Error404__title">
@@ -43,6 +49,12 @@
             data-text="Connection error detected."
             >Connection error detected.</span
           >
+          <span
+            class="Error404__connection-error-japanese"
+            data-text="Connection error detected."
+          >
+            接続エラーが検出されました。
+          </span>
         </div>
       </div>
     </div>
@@ -77,6 +89,10 @@ const goBack = () => {
 <style lang="scss" scoped>
 .Error404 {
   @apply h-screen w-screen bg-black;
+
+  &__japanese-text {
+    @apply fixed top-5 left-5 opacity-50 text-secondary brightness-200;
+  }
 
   &__container {
     @apply relative h-full w-full bg-black/50;
@@ -122,7 +138,11 @@ const goBack = () => {
   }
 
   &__connection-error {
-    @apply absolute bottom-0 left-0 p-2 font-rajdhaniRegular text-base text-secondarySoft;
+    @apply absolute bottom-10 left-5 font-rajdhaniRegular text-base text-secondarySoft;
+  }
+
+  &__connection-error-japanese {
+    @apply absolute bottom-5 left-5 font-rajdhaniRegular text-xs text-secondarySoft;
   }
 }
 

@@ -1,10 +1,18 @@
 <template>
   <Transition name="tv-turn-on">
     <div v-if="isVisible" class="tv-turn-on-effect" aria-hidden="true">
-      <div class="tv-center-point"></div>
+      <CRTEffect />
+      <!-- Loading text & shape -->
+      <div class="loader-wrapper">
+        <div class="tv-loading-text">
+          <h1>Loading...</h1>
+        </div>
+        <div class="loader" />
+        <p class="tv-loading-text">少々お待ちください...</p>
+      </div>
       <div class="tv-scan-lines">
         <div
-          v-for="i in 60"
+          v-for="i in 500"
           :key="i"
           class="tv-scan-line"
           :style="getScanLineStyle(i)"
@@ -19,9 +27,11 @@
 const isVisible = ref(true);
 
 const getScanLineStyle = (index: number) => {
-  const offset = (index - 30.5) * 1.8;
+  const offset =
+    index -
+    (window && typeof window !== "undefined" ? window.innerHeight * 0.25 : 400);
   const delay = Math.abs(offset) * 0.015;
-  const duration = 0.8 + (Math.abs(offset) / 100) * 0.4;
+  const duration = 2 + (Math.abs(offset) / 100) * 0.4;
 
   return {
     top: `calc(50% + ${offset}vh)`,
@@ -33,46 +43,71 @@ const getScanLineStyle = (index: number) => {
 onMounted(() => {
   setTimeout(() => {
     isVisible.value = false;
-  }, 1800);
+  }, 1200);
 });
 </script>
 
 <style lang="scss" scoped>
+.loader-wrapper {
+  @apply z-[10001] fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-5 items-center justify-center;
+}
+.tv-loading-text {
+  @apply text-primary text-center flex flex-col gap-5 text-xs tracking-widest font-rajdhaniLight;
+}
+
+$bgOptions: no-repeat linear-gradient($primary 0 0);
+
+.loader {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  background: $bgOptions center/100% 10px, $bgOptions center/10px 100%;
+}
+.loader:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: $bgOptions 0 0, $bgOptions 100% 0, $bgOptions 0 100%,
+    $bgOptions 100% 100%;
+  background-size: 15.5px 15.5px;
+  animation: l16 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
+}
+@keyframes l16 {
+  33% {
+    inset: -10px;
+    transform: rotate(0deg);
+  }
+  66% {
+    inset: -10px;
+    transform: rotate(90deg);
+  }
+  100% {
+    inset: 0;
+    transform: rotate(90deg);
+  }
+}
+
 .tv-turn-on-effect {
-  @apply fixed inset-0 z-[10000] h-screen w-screen pointer-events-none;
-  background: #000;
+  @apply fixed top-0 left-0 z-[10000] h-screen w-screen pointer-events-none;
   overflow: hidden;
 }
 
-.tv-center-point {
-  @apply fixed top-1/2 left-1/2;
-  transform: translate(-50%, -50%);
-  width: 6px;
-  height: 6px;
-  background: #fff;
-  border-radius: 50%;
-  box-shadow: 0 0 15px #fff, 0 0 30px rgba(255, 255, 255, 0.8),
-    0 0 50px rgba(255, 255, 255, 0.4);
-  animation: centerPointExpand 0.6s ease-out forwards;
-  z-index: 10;
-}
-
 .tv-scan-lines {
-  @apply fixed inset-0;
+  @apply fixed inset-0 top-0 left-0 h-screen w-screen bg-black;
 }
 
 .tv-scan-line {
-  @apply absolute left-0 w-full;
-  height: 3px;
+  @apply fixed left-0 w-full;
+  height: 1px;
   background: linear-gradient(
     90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.2) 15%,
-    rgba(0, 255, 242, 0.5) 30%,
-    rgba(45, 175, 207, 0.7) 50%,
-    rgba(219, 0, 84, 0.5) 70%,
-    rgba(47, 185, 178, 0.2) 85%,
-    transparent 100%
+    $primary 0%,
+    rgba(54, 203, 248, 0.89) 15%,
+    rgba(255, 255, 255, 0.603) 30%,
+    rgba(58, 226, 170, 0.795) 50%,
+    rgba(255, 255, 255, 0.466) 70%,
+    rgba(44, 238, 238, 0.5) 85%,
+    $primary 100%
   );
   animation: scanLineExpand ease-out forwards;
   opacity: 0;
@@ -80,9 +115,8 @@ onMounted(() => {
 }
 
 .tv-fade-overlay {
-  @apply absolute inset-0;
-  background: #000;
-  animation: fadeToTransparent 1.8s ease-out forwards;
+  @apply absolute inset-0 bg-black;
+  animation: fadeToTransparent 2s ease-out forwards;
   z-index: 5;
 }
 
@@ -130,7 +164,7 @@ onMounted(() => {
   }
   100% {
     opacity: 0;
-    transform: scaleY(1);
+    transform: scaleY(2);
     filter: blur(2px);
   }
 }
@@ -155,11 +189,11 @@ onMounted(() => {
 
 // Transición de salida
 .tv-turn-on-enter-active {
-  transition: opacity 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 .tv-turn-on-leave-active {
-  transition: opacity 0.4s ease-out;
+  transition: all 0.4s ease-out;
 }
 
 .tv-turn-on-enter-from,

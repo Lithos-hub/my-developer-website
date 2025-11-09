@@ -1,7 +1,11 @@
 <template>
   <div class="Hero__container">
     <div class="Hero__content">
-      <ComponentName componentName="Hero.vue" color="primary" />
+      <ComponentName
+        componentName="Hero.vue"
+        color="primary"
+        japaneseName="トップセクション"
+      />
       <Suspense>
         <div class="Hero__scene" v-if="!isMobile && !isTablet">
           <ThreejsHeroScene />
@@ -10,6 +14,7 @@
 
       <h1 class="Hero__title">{{ $t("hero.name") }}</h1>
       <h2 class="Hero__subtitle">{{ $t("hero.title") }}</h2>
+      <h3 class="Hero__japanese-subtitle">ソフトウェアエンジニア</h3>
 
       <BaseButton class="Hero__button-container" @click="scrollToPortfolio">
         {{ $t("hero.button") }}</BaseButton
@@ -54,6 +59,10 @@ const scrollToPortfolio = () => {
   &__subtitle {
     @include neon-text-secondary;
     @apply absolute bottom-5 right-5 text-center font-rajdhaniLight text-lg font-bold leading-tight text-secondary lg:text-[25px];
+  }
+
+  &__japanese-subtitle {
+    @apply absolute bottom-2 left-2 text-center font-rajdhaniLight text-sm font-extralight leading-tight text-secondarySoft brightness-200;
   }
 
   &__button-container {

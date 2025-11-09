@@ -6,7 +6,11 @@
         :alt="$t('common.decorationAlt')"
         class="Experience__decoration Experience__decoration--top-left"
       />
-      <ComponentName componentName="Experience.vue" color="secondary" />
+      <ComponentName
+        componentName="Experience.vue"
+        color="secondary"
+        japaneseName="経験"
+      />
       <div class="Experience__inner-container">
         <img
           src="/svg/decoration/decoration-13.svg"

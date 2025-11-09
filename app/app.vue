@@ -1,6 +1,6 @@
 <template>
   <div class="App">
-    <TVTurnOnEffect ref="tvTurnOnEffectRef" />
+    <TVTurnOnEffect />
 
     <CRTEffect />
     <WhiteNoise />

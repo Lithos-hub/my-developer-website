@@ -11,7 +11,11 @@
         :alt="$t('common.decorationAlt')"
         class="About__decoration About__decoration--bottom-right"
       />
-      <ComponentName componentName="About.vue" color="secondary" />
+      <ComponentName
+        componentName="About.vue"
+        color="secondary"
+        japaneseName="自己紹介"
+      />
       <div class="About__inner-container">
         <img
           src="/svg/decoration/decoration-3.svg"

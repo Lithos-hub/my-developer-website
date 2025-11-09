@@ -6,7 +6,11 @@
         :alt="$t('common.decorationAlt')"
         class="Summary__decoration Summary__decoration--bottom-left"
       />
-      <ComponentName componentName="Summary.vue" color="primary" />
+      <ComponentName
+        componentName="Summary.vue"
+        color="primary"
+        japaneseName="概要"
+      />
       <div class="Summary__inner-container">
         <img
           src="/svg/decoration/decoration-1.svg"
