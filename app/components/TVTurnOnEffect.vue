@@ -27,9 +27,7 @@
 const isVisible = ref(true);
 
 const getScanLineStyle = (index: number) => {
-  const offset =
-    index -
-    (window && typeof window !== "undefined" ? window.innerHeight * 0.25 : 400);
+  const offset = index - window.innerHeight * 0.25;
   const delay = Math.abs(offset) * 0.015;
   const duration = 2 + (Math.abs(offset) / 100) * 0.4;
 
@@ -61,13 +59,18 @@ $bgOptions: no-repeat linear-gradient($primary 0 0);
   width: 40px;
   height: 40px;
   position: relative;
-  background: $bgOptions center/100% 10px, $bgOptions center/10px 100%;
+  background:
+    $bgOptions center/100% 10px,
+    $bgOptions center/10px 100%;
 }
 .loader:before {
   content: "";
   position: absolute;
   inset: 0;
-  background: $bgOptions 0 0, $bgOptions 100% 0, $bgOptions 0 100%,
+  background:
+    $bgOptions 0 0,
+    $bgOptions 100% 0,
+    $bgOptions 0 100%,
     $bgOptions 100% 100%;
   background-size: 15.5px 15.5px;
   animation: l16 1.5s infinite cubic-bezier(0.3, 1, 0, 1);

@@ -1,10 +1,12 @@
 <template>
   <div class="App">
-    <TVTurnOnEffect />
+    <ClientOnly>
+      <TVTurnOnEffect />
+      <CRTEffect />
+      <WhiteNoise />
+      <MobileMenu />
+    </ClientOnly>
 
-    <CRTEffect />
-    <WhiteNoise />
-    <MobileMenu />
     <NuxtPage />
   </div>
 </template>
