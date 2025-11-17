@@ -201,12 +201,15 @@ const getMostCommonFields = <T extends string, U extends Experience>(
   fieldExtractor: FieldExtractor<T, U>,
   limit: number = 5
 ): string => {
-  const fieldCount = experiences.reduce((acc, experience) => {
-    fieldExtractor(experience).forEach((field) => {
-      acc[field] = (acc[field] || 0) + 1;
-    });
-    return acc;
-  }, {} as Record<string, number>);
+  const fieldCount = experiences.reduce(
+    (acc, experience) => {
+      fieldExtractor(experience).forEach((field) => {
+        acc[field] = (acc[field] || 0) + 1;
+      });
+      return acc;
+    },
+    {} as Record<string, number>
+  );
 
   return Object.entries(fieldCount)
     .sort((a, b) => b[1] - a[1])
@@ -249,12 +252,12 @@ export const techSkills = [
     name: "TypeScript",
   },
   {
-    image: "/tech-logos/vite.svg",
-    name: "Vite",
-  },
-  {
     image: "/tech-logos/vue.svg",
     name: "Vue",
+  },
+  {
+    image: "/tech-logos/nuxt.svg",
+    name: "Nuxt",
   },
   {
     image: "/tech-logos/react.svg",
@@ -265,8 +268,8 @@ export const techSkills = [
     name: "Next.js",
   },
   {
-    image: "/tech-logos/nuxt.svg",
-    name: "Nuxt",
+    image: "/tech-logos/vite.svg",
+    name: "Vite",
   },
   {
     image: "/tech-logos/pinia.svg",

@@ -35,6 +35,7 @@ const props = withDefaults(defineProps<ButtonProps>(), {
     @apply absolute inset-0 -z-0 h-full w-full bg-black/90;
     clip-path: $clip-button;
     background-size: 5px 5px;
+    box-shadow: inset 0 0 4px 2px rgba(0, 0, 0);
     background-image: repeating-linear-gradient(
       0deg,
       $gradient-primary,
