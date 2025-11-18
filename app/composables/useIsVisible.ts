@@ -35,7 +35,7 @@ export const useIsVisible = ({ refs, options = {} }: UseIsVisibleProps) => {
 
   const defaultOptions: IntersectionObserverInit = {
     threshold: [0, 0.25, 0.5, 0.75, 1],
-    rootMargin: "-45% 0px -45% 0px", // Ajustamos el margen para detectar mejor el centro
+    rootMargin: "-45% 0px -45% 0px",
     ...options,
   };
 
@@ -43,11 +43,9 @@ export const useIsVisible = ({ refs, options = {} }: UseIsVisibleProps) => {
     if (typeof window === "undefined") return;
 
     observer = new IntersectionObserver((entries) => {
-      // Filtramos las entradas que están intersectando
       const visibleEntries = entries.filter((entry) => entry.isIntersecting);
 
       if (visibleEntries.length > 0) {
-        // Encontramos la entrada más cercana al centro
         const mostCentralEntry = visibleEntries.reduce((prev, current) => {
           const prevDistance = getDistanceFromCenter(prev.target);
           const currentDistance = getDistanceFromCenter(current.target);
@@ -59,7 +57,6 @@ export const useIsVisible = ({ refs, options = {} }: UseIsVisibleProps) => {
     }, defaultOptions);
   };
 
-  // Nueva función para calcular la distancia al centro
   const getDistanceFromCenter = (element: Element): number => {
     const rect = element.getBoundingClientRect();
     const elementCenter = rect.top + rect.height / 2;
@@ -67,7 +64,6 @@ export const useIsVisible = ({ refs, options = {} }: UseIsVisibleProps) => {
     return Math.abs(elementCenter - viewportCenter);
   };
 
-  // Observe the elements
   const observeElements = () => {
     if (!observer) return;
 
@@ -80,7 +76,6 @@ export const useIsVisible = ({ refs, options = {} }: UseIsVisibleProps) => {
     });
   };
 
-  // Clean the observer
   const cleanup = () => {
     if (observer) {
       observer.disconnect();
