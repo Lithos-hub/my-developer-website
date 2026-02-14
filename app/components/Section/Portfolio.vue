@@ -97,7 +97,6 @@ import { PORTFOLIO_PROJECTS } from "~/consts/portfolio";
 
 <style lang="scss" scoped>
 .Portfolio {
-  @apply border-b border-primary;
   &__content {
     @include section-content-primary;
   }

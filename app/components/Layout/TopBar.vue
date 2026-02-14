@@ -109,10 +109,10 @@ function scrollToSection(section: string): void {
 
 <style lang="scss" scoped>
 .TopBar {
-  @apply sticky top-0 z-20 flex h-[60px] w-full items-center justify-between border-b border-secondary transition-all duration-300;
+  @apply sticky top-0 z-20 flex h-[60px] w-full items-center justify-between border-b border-white/50 transition-all duration-300;
 
   &--neutral {
-    @apply border-white;
+    @apply border-white/50;
   }
 
   &--primary {
@@ -167,7 +167,7 @@ function scrollToSection(section: string): void {
     }
 
     &--neutral {
-      @apply border-white;
+      @apply border-white/50;
       @include neon-text-neutral;
     }
   }

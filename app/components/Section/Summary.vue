@@ -125,9 +125,9 @@ const totalSummary = () => {
 
 <style lang="scss" scoped>
 .Summary {
-  @apply border-b border-primary;
   &__content {
     @include section-content-primary;
+    @include section-content-bordered;
   }
 
   &__inner-container {

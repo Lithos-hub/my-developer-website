@@ -39,12 +39,9 @@ const scrollToPortfolio = () => {
 @reference "~/assets/css/main.css";
 
 .Hero {
-  &__container {
-    @apply relative border-b border-white;
-  }
-
   &__content {
-    @apply relative h-[calc(100vh-60px)] bg-black w-full p-5 lg:mx-auto lg:max-w-[80vw] border-x border-white;
+    @apply relative h-[calc(100vh-60px)] bg-black w-full p-5 lg:mx-auto lg:max-w-[80vw];
+    @include section-content-bordered;
   }
 
   &__scene {

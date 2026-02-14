@@ -174,9 +174,9 @@ const getEndDate = ({ endYear, endMonth }: Experience) => {
 
 <style lang="scss" scoped>
 .Experience {
-  @apply border-b border-secondary;
   &__content {
     @include section-content-secondary;
+    @include section-content-bordered;
   }
 
   &__decoration {

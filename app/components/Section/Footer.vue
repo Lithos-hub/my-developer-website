@@ -59,7 +59,7 @@
 
 <style lang="scss" scoped>
 .Footer {
-  @apply flex h-full w-full justify-between bg-black;
+  @apply flex h-full w-full justify-between bg-black border-t border-white/50;
 
   &__left,
   &__right {
@@ -71,7 +71,7 @@
   }
 
   &__center {
-    @apply flex h-auto w-full max-w-[80vw] items-center justify-between border-x border-primary p-2;
+    @apply flex h-auto w-full max-w-[80vw] items-center justify-center gap-10 p-2;
   }
 
   &__content {

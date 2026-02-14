@@ -110,9 +110,9 @@ const techLogos: TechLogo[] = [
 
 <style lang="scss" scoped>
 .About {
-  @apply border-b border-secondary;
   &__content {
     @include section-content-secondary;
+    @include section-content-bordered;
   }
 
   &__inner-container {
@@ -121,12 +121,16 @@ const techLogos: TechLogo[] = [
 
   &__title {
     @include section-title-secondary;
-    text-shadow: 0 0 2px rgb(255, 0, 0), 0 0 4px magenta;
+    text-shadow:
+      0 0 2px rgb(255, 0, 0),
+      0 0 4px magenta;
   }
 
   &__text {
     @apply z-10 flex w-full flex-col items-center justify-center gap-10 font-bold;
-    text-shadow: 0 0 2px rgb(255, 0, 0), 0 0 4px magenta;
+    text-shadow:
+      0 0 2px rgb(255, 0, 0),
+      0 0 4px magenta;
   }
 
   &__decoration {
