@@ -17,7 +17,10 @@ export interface Experience {
   initialYear: number;
   endYear: number | null;
   stack: Stack[];
-  tasksKeys: string[];
+  tasksKeys: {
+    projectName: string;
+    tasks: string[];
+  }[];
 }
 
 type FieldExtractor<T, U> = (item: U) => T[];
@@ -44,11 +47,16 @@ export const DEV_EXPERIENCE = [
       { techName: "SCSS", imageUrl: "/tech-logos/sass.svg" },
     ],
     tasksKeys: [
-      "experience.items.1.tasks.1",
-      "experience.items.1.tasks.2",
-      "experience.items.1.tasks.3",
-      "experience.items.1.tasks.4",
-      "experience.items.1.tasks.5",
+      {
+        projectName: "BBVA app",
+        tasks: [
+          "experience.items.1.tasks.1",
+          "experience.items.1.tasks.2",
+          "experience.items.1.tasks.3",
+          "experience.items.1.tasks.4",
+          "experience.items.1.tasks.5",
+        ],
+      },
     ],
   },
   {
@@ -82,15 +90,20 @@ export const DEV_EXPERIENCE = [
       { techName: "Three.js", imageUrl: "/tech-logos/three.svg" },
     ],
     tasksKeys: [
-      "experience.items.2.tasks.1",
-      "experience.items.2.tasks.2",
-      "experience.items.2.tasks.3",
-      "experience.items.2.tasks.4",
-      "experience.items.2.tasks.5",
-      "experience.items.2.tasks.6",
-      "experience.items.2.tasks.7",
-      "experience.items.2.tasks.8",
-      "experience.items.2.tasks.9",
+      {
+        projectName: "McKinsey & Company and Repsol apps",
+        tasks: [
+          "experience.items.2.tasks.1",
+          "experience.items.2.tasks.2",
+          "experience.items.2.tasks.3",
+          "experience.items.2.tasks.4",
+          "experience.items.2.tasks.5",
+          "experience.items.2.tasks.6",
+          "experience.items.2.tasks.7",
+          "experience.items.2.tasks.8",
+          "experience.items.2.tasks.9",
+        ],
+      },
     ],
   },
   {
@@ -115,11 +128,16 @@ export const DEV_EXPERIENCE = [
       { techName: "SCSS", imageUrl: "/tech-logos/sass.svg" },
     ],
     tasksKeys: [
-      "experience.items.3.tasks.1",
-      "experience.items.3.tasks.2",
-      "experience.items.3.tasks.3",
-      "experience.items.3.tasks.4",
-      "experience.items.3.tasks.5",
+      {
+        projectName: "Europcar website",
+        tasks: [
+          "experience.items.3.tasks.1",
+          "experience.items.3.tasks.2",
+          "experience.items.3.tasks.3",
+          "experience.items.3.tasks.4",
+          "experience.items.3.tasks.5",
+        ],
+      },
     ],
   },
   {
@@ -144,11 +162,16 @@ export const DEV_EXPERIENCE = [
       { techName: "SCSS", imageUrl: "/tech-logos/sass.svg" },
     ],
     tasksKeys: [
-      "experience.items.4.tasks.1",
-      "experience.items.4.tasks.2",
-      "experience.items.4.tasks.3",
-      "experience.items.4.tasks.4",
-      "experience.items.4.tasks.5",
+      {
+        projectName: "PhotoPills app",
+        tasks: [
+          "experience.items.4.tasks.1",
+          "experience.items.4.tasks.2",
+          "experience.items.4.tasks.3",
+          "experience.items.4.tasks.4",
+          "experience.items.4.tasks.5",
+        ],
+      },
     ],
   },
   {
@@ -158,27 +181,44 @@ export const DEV_EXPERIENCE = [
     company: "Knowmad Mood",
     companyFields: ["Consulting", "IT"],
     subtitle: "Knowmad Mood",
-    clients: ["El Corte Inglés"],
-    clientFields: ["E-commerce", "Fashion"],
+    clients: ["UTAMED University", "El Corte Inglés"],
+    clientFields: ["Education", "E-commerce", "Fashion"],
     initialYear: 2025,
     endYear: null,
     initialMonth: 2,
     endMonth: null,
     stack: [
       { techName: "Vue 3", imageUrl: "/tech-logos/vue.svg" },
+      { techName: "Nuxt", imageUrl: "/tech-logos/nuxt.svg" },
       { techName: "TypeScript", imageUrl: "/tech-logos/typescript.svg" },
       { techName: "Jest", imageUrl: "/tech-logos/jest.svg" },
+      { techName: "Vitest", imageUrl: "/tech-logos/vitest.svg" },
+      { techName: "PrimeVue", imageUrl: "/tech-logos/primevue.svg" },
       { techName: "Pinia", imageUrl: "/tech-logos/pinia.svg" },
       { techName: "Tailwind", imageUrl: "/tech-logos/tailwind.svg" },
-      { techName: "Less", imageUrl: "/tech-logos/less.svg" },
+      { techName: "SCSS", imageUrl: "/tech-logos/sass.svg" },
     ],
     tasksKeys: [
-      "experience.items.5.tasks.1",
-      "experience.items.5.tasks.2",
-      "experience.items.5.tasks.3",
-      "experience.items.5.tasks.4",
-      "experience.items.5.tasks.5",
-      "experience.items.5.tasks.6",
+      {
+        projectName: "UTAMED University applications",
+        tasks: [
+          "experience.items.5.2.tasks.1",
+          "experience.items.5.2.tasks.2",
+          "experience.items.5.2.tasks.3",
+          "experience.items.5.2.tasks.4",
+        ],
+      },
+      {
+        projectName: "El Corte Inglés websites",
+        tasks: [
+          "experience.items.5.1.tasks.1",
+          "experience.items.5.1.tasks.2",
+          "experience.items.5.1.tasks.3",
+          "experience.items.5.1.tasks.4",
+          "experience.items.5.1.tasks.5",
+          "experience.items.5.1.tasks.6",
+        ],
+      },
     ],
   },
 ].sort((a, b) => b.id - a.id) as Experience[];
@@ -199,7 +239,7 @@ export const EXPERIENCE_YEARS = [
 const getMostCommonFields = <T extends string, U extends Experience>(
   experiences: U[],
   fieldExtractor: FieldExtractor<T, U>,
-  limit: number = 5
+  limit: number = 5,
 ): string => {
   const fieldCount = experiences.reduce(
     (acc, experience) => {
@@ -208,7 +248,7 @@ const getMostCommonFields = <T extends string, U extends Experience>(
       });
       return acc;
     },
-    {} as Record<string, number>
+    {} as Record<string, number>,
   );
 
   return Object.entries(fieldCount)
@@ -220,7 +260,7 @@ const getMostCommonFields = <T extends string, U extends Experience>(
 
 export const getMostUsedTech = () =>
   getMostCommonFields(DEV_EXPERIENCE, (exp) =>
-    exp.stack.map((tech) => tech.techName)
+    exp.stack.map((tech) => tech.techName),
   );
 
 export const getMainClientFields = (t?: (key: string) => string) => {

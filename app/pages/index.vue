@@ -39,7 +39,7 @@ useHead(() => {
     name: "Carlos Segura Garcia",
     jobTitle: "Software Engineer",
     description: description,
-    url: "https://carlos-segura-garcia.com",
+    url: "https://carlosseguragarcia.com",
     sameAs: [
       "https://github.com/Lithos-hub",
       "https://www.linkedin.com/in/carlos-segura-garcia/",
@@ -58,10 +58,6 @@ useHead(() => {
       "Vuex",
       "Three.js",
     ],
-    alumniOf: {
-      "@type": "EducationalOrganization",
-      name: "Universidad (Music History, Science, and Music Technology)",
-    },
   });
 
   return {
@@ -130,7 +126,8 @@ watch(debouncedVisibleSection, (newVisibleElement) => {
     content: "";
     @apply fixed inset-0 -z-10 h-screen w-full bg-transparent opacity-50;
 
-    background: radial-gradient(
+    background:
+      radial-gradient(
         circle,
         transparent 20%,
         rgba(0, 0, 0, 0.196) 20%,
@@ -157,7 +154,8 @@ watch(debouncedVisibleSection, (newVisibleElement) => {
     content: "";
     @apply fixed inset-0 -z-10 h-screen w-full bg-transparent opacity-50;
 
-    background: radial-gradient(
+    background:
+      radial-gradient(
         circle,
         transparent 15%,
         rgba(0, 0, 0, 0.196) 15%,
@@ -183,37 +181,77 @@ watch(debouncedVisibleSection, (newVisibleElement) => {
 
 @keyframes backgroundMutation {
   0% {
-    background-size: 40px 40px, 40px 40px, 25px 25px, 25px 25px;
+    background-size:
+      40px 40px,
+      40px 40px,
+      25px 25px,
+      25px 25px;
   }
   25% {
-    background-size: 41px 40px, 40px 41px, 26px 25px, 25px 26px;
+    background-size:
+      41px 40px,
+      40px 41px,
+      26px 25px,
+      25px 26px;
   }
   50% {
-    background-size: 40px 41px, 41px 40px, 25px 26px, 26px 25px;
+    background-size:
+      40px 41px,
+      41px 40px,
+      25px 26px,
+      26px 25px;
   }
   75% {
-    background-size: 41px 41px, 39px 40px, 24px 25px, 25px 24px;
+    background-size:
+      41px 41px,
+      39px 40px,
+      24px 25px,
+      25px 24px;
   }
   100% {
-    background-size: 40px 39px, 40px 41px, 25px 24px, 24px 25px;
+    background-size:
+      40px 39px,
+      40px 41px,
+      25px 24px,
+      24px 25px;
   }
 }
 
 @keyframes backgroundMutation2 {
   0% {
-    background-size: 40px 40px, 40px 40px, 25px 25px, 25px 25px;
+    background-size:
+      40px 40px,
+      40px 40px,
+      25px 25px,
+      25px 25px;
   }
   25% {
-    background-size: 39px 40px, 41px 40px, 24px 25px, 26px 25px;
+    background-size:
+      39px 40px,
+      41px 40px,
+      24px 25px,
+      26px 25px;
   }
   50% {
-    background-size: 40px 39px, 40px 41px, 25px 24px, 25px 26px;
+    background-size:
+      40px 39px,
+      40px 41px,
+      25px 24px,
+      25px 26px;
   }
   75% {
-    background-size: 41px 40px, 39px 40px, 26px 25px, 24px 25px;
+    background-size:
+      41px 40px,
+      39px 40px,
+      26px 25px,
+      24px 25px;
   }
   100% {
-    background-size: 40px 41px, 40px 39px, 25px 26px, 25px 24px;
+    background-size:
+      40px 41px,
+      40px 39px,
+      25px 26px,
+      25px 24px;
   }
 }
 </style>

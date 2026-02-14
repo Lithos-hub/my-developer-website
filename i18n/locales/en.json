@@ -95,13 +95,23 @@
         }
       },
       "5": {
-        "tasks": {
-          "1": "I'm working in an internal squad for El Corte Inglés to develop a new e-commerce experience",
-          "2": "I am developing new features and solving issues and defects in several projects for a new search experience.",
-          "3": "I work on developing new features that expand or improve the website experience, as well as refactoring and improving its performance.",
-          "4": "I am developing unit tests with Jest, Testing Library and Vue Test Utils.",
-          "5": "I collaborate with the QA team for manual testing.",
-          "6": "I am working under Scrum methodology."
+        "1": {
+          "tasks": {
+            "1": "I worked in an internal squad for El Corte Inglés to develop a new e-commerce experience.",
+            "2": "I developed new features and solve issues and defects in several projects for a new search experience.",
+            "3": "I worked on developing new features that expand or improve the website experience, as well as refactoring and improving its performance.",
+            "4": "I developed unit tests with Jest, Testing Library and Vue Test Utils.",
+            "5": "I collaborated with the QA team for manual testing.",
+            "6": "I worked under Scrum methodology."
+          }
+        },
+        "2": {
+          "tasks": {
+            "1": "I had full responsibility for the frontend side of the university's various applications.",
+            "2": "I led several projects alongside the development of the university's ERP from scratch.",
+            "3": "I made technical decisions regarding architecture, use of technologies, and UX/UI design.",
+            "4": "I proposed workflows for building the pipeline, code security, format, and test execution."
+          }
         }
       }
     }

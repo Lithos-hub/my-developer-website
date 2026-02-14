@@ -95,13 +95,23 @@
         }
       },
       "5": {
-        "tasks": {
-          "1": "Estoy trabajando en un squad interno para El Corte Inglés para desarrollar una nueva experiencia de comercio electrónico",
-          "2": "Estoy desarrollando nuevas características y resolviendo problemas y defectos en varios proyectos para una nueva experiencia de búsqueda",
-          "3": "Trabajo en desarrollar nuevas características que amplían o mejoran la experiencia del sitio web, así como refactorizar y mejorar su rendimiento",
-          "4": "Estoy desarrollando pruebas unitarias con Jest, Testing Library y Vue Test Utils",
-          "5": "Colaboro con el equipo de QA para pruebas manuales",
-          "6": "Estoy trabajando bajo metodología Scrum"
+        "1": {
+          "tasks": {
+            "1": "Trabajé en un squad interno para El Corte Inglés para desarrollar una nueva experiencia de comercio electrónico",
+            "2": "Desarrollé nuevas características y resolviendo problemas y defectos en varios proyectos para una nueva experiencia de búsqueda",
+            "3": "Desarrollé nuevas características que amplían o mejoran la experiencia del sitio web, así como refactorizar y mejorar su rendimiento",
+            "4": "Desarrollé pruebas unitarias con Jest, Testing Library y Vue Test Utils",
+            "5": "Colaboré con el equipo de QA para pruebas manuales",
+            "6": "Trabajé bajo metodología Scrum"
+          }
+        },
+        "2": {
+          "tasks": {
+            "1": "Tuve responsabilidad plena del lado frontend de las diversas aplicaciones de la universidad",
+            "2": "Lideré varios proyectos junto al desarrollo del ERP de la universidad desde cero",
+            "3": "Tomé decisiones técnicas relacionadas con la arquitectura, el uso de tecnologías y el diseño UX/UI",
+            "4": "Propuse flujos de trabajo para la construcción de la pipeline, la seguridad del código y el formato, y la ejecución de pruebas"
+          }
         }
       }
     }

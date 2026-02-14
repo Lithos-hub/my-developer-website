@@ -122,14 +122,23 @@
                 </div>
               </div>
 
-              <div class="experience-card__tasks">
-                <span class="experience-card__label">{{
-                  $t("experience.tasks")
-                }}</span>
+              <div
+                v-for="(project, projectIndex) in experience.tasksKeys"
+                :key="`project-${projectIndex}`"
+                class="experience-card__tasks"
+              >
+                <span
+                  class="experience-card__label experience-card__label--project"
+                  >#{{ projectIndex + 1 }} {{ project.projectName }}</span
+                >
+                <span
+                  class="experience-card__label experience-card__label--tasks"
+                  >{{ $t("experience.tasks") }}</span
+                >
                 <ul class="experience-card__task-list">
                   <li
-                    v-for="(taskKey, taskIndex) in experience.tasksKeys"
-                    :key="taskIndex"
+                    v-for="(taskKey, taskIndex) in project.tasks"
+                    :key="`${projectIndex}-${taskIndex}`"
                     class="experience-card__task-item"
                   >
                     <div class="experience-card__task-bullet" />
@@ -324,6 +333,14 @@ const getEndDate = ({ endYear, endMonth }: Experience) => {
   &__label {
     @include chromatic-aberration-secondary;
     @apply font-orbitron text-sm font-bold text-secondary;
+
+    &--project {
+      @apply block text-base text-white mb-1;
+    }
+
+    &--tasks {
+      @apply mt-2;
+    }
   }
 
   &__stack {
