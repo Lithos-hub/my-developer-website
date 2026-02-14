@@ -53,6 +53,16 @@
       "frontEndDeveloper": "Frontend-Entwickler",
       "softwareEngineer": "Software-Ingenieur"
     },
+    "projects": {
+      "1": "Interne BBVA-Anwendung",
+      "2": "Verschiedene Anwendungen für McKinsey & Company und Repsol",
+      "3": "Hauptwebsite von Europcar",
+      "4": "PhotoPills-Webanwendung",
+      "5": {
+        "utamed": "Verschiedene Anwendungen der UTAMED University",
+        "elCorteIngles": "Websites der El Corte Inglés Gruppe (Hauptweb, Primeriti, Supermarkt, usw.)"
+      }
+    },
     "items": {
       "1": {
         "tasks": {
@@ -95,13 +105,23 @@
         }
       },
       "5": {
-        "tasks": {
-          "1": "Ich arbeite in einem internen Squad für El Corte Inglés an der Entwicklung einer neuen E-Commerce-Erfahrung",
-          "2": "Ich entwickle neue Funktionen und löse Probleme und Fehler in mehreren Projekten für eine neue Suchfunktion",
-          "3": "Ich arbeite an der Entwicklung neuer Funktionen, die die Website-Erfahrung erweitern oder verbessern, sowie an der Refaktorisierung und Verbesserung ihrer Leistung",
-          "4": "Ich entwickle Unit-Tests mit Jest, Testing Library und Vue Test Utils",
-          "5": "Ich arbeite mit dem QA-Team für manuelle Tests zusammen",
-          "6": "Ich arbeite unter der Scrum-Methodik"
+        "1": {
+          "tasks": {
+            "1": "Ich habe in einem internen Squad für El Corte Inglés an der Entwicklung einer neuen E-Commerce-Erfahrung gearbeitet",
+            "2": "Ich habe neue Funktionen entwickelt und Probleme und Fehler in mehreren Projekten für eine neue Suchfunktion behoben",
+            "3": "Ich habe an der Entwicklung neuer Funktionen gearbeitet, die die Website-Erfahrung erweitern oder verbessern, sowie an der Refaktorisierung und Verbesserung ihrer Leistung",
+            "4": "Ich habe Unit-Tests mit Jest, Testing Library und Vue Test Utils entwickelt",
+            "5": "Ich habe mit dem QA-Team für manuelle Tests zusammengearbeitet",
+            "6": "Ich habe unter der Scrum-Methodik gearbeitet"
+          }
+        },
+        "2": {
+          "tasks": {
+            "1": "Ich hatte die volle Verantwortung für die Frontend-Seite der verschiedenen Anwendungen der Universität",
+            "2": "Ich leitete mehrere Projekte neben der Entwicklung des ERP der Universität von Grund auf",
+            "3": "Ich traf technische Entscheidungen bezüglich Architektur, Technologienutzung und UX/UI-Design",
+            "4": "Ich schlug Workflows für den Aufbau der Pipeline, Codesicherheit, Format und Testausführung vor"
+          }
         }
       }
     }

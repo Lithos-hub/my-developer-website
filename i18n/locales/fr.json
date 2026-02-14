@@ -53,6 +53,16 @@
       "frontEndDeveloper": "Développeur Front-end",
       "softwareEngineer": "Ingénieur Logiciel"
     },
+    "projects": {
+      "1": "Application interne BBVA",
+      "2": "Plusieurs applications pour McKinsey & Company et Repsol",
+      "3": "Site web principal d'Europcar",
+      "4": "Application web PhotoPills",
+      "5": {
+        "utamed": "Plusieurs applications de l'Université UTAMED",
+        "elCorteIngles": "Sites web du groupe El Corte Inglés (Web principal, Primeriti, Supermarché, etc.)"
+      }
+    },
     "items": {
       "1": {
         "tasks": {
@@ -95,13 +105,23 @@
         }
       },
       "5": {
-        "tasks": {
-          "1": "Je travaille dans une équipe interne pour El Corte Inglés pour développer une nouvelle expérience e-commerce",
-          "2": "Je développe de nouvelles fonctionnalités et résous des problèmes et défauts dans plusieurs projets pour une nouvelle expérience de recherche",
-          "3": "Je travaille au développement de nouvelles fonctionnalités qui étendent ou améliorent l'expérience du site Web, ainsi qu'à la refactorisation et à l'amélioration de ses performances",
-          "4": "Je développe des tests unitaires avec Jest, Testing Library et Vue Test Utils",
-          "5": "Je collabore avec l'équipe QA pour les tests manuels",
-          "6": "Je travaille sous la méthodologie Scrum"
+        "1": {
+          "tasks": {
+            "1": "J'ai travaillé dans une équipe interne pour El Corte Inglés pour développer une nouvelle expérience e-commerce",
+            "2": "J'ai développé de nouvelles fonctionnalités et résolu des problèmes et défauts dans plusieurs projets pour une nouvelle expérience de recherche",
+            "3": "J'ai travaillé au développement de nouvelles fonctionnalités qui étendent ou améliorent l'expérience du site Web, ainsi qu'à la refactorisation et à l'amélioration de ses performances",
+            "4": "J'ai développé des tests unitaires avec Jest, Testing Library et Vue Test Utils",
+            "5": "J'ai collaboré avec l'équipe QA pour les tests manuels",
+            "6": "J'ai travaillé sous la méthodologie Scrum"
+          }
+        },
+        "2": {
+          "tasks": {
+            "1": "J'ai eu la responsabilité complète du côté frontend des diverses applications de l'université",
+            "2": "J'ai dirigé plusieurs projets aux côtés du développement de l'ERP de l'université depuis zéro",
+            "3": "J'ai pris des décisions techniques concernant l'architecture, l'utilisation des technologies et le design UX/UI",
+            "4": "J'ai proposé des flux de travail pour la construction du pipeline, la sécurité du code, le format et l'exécution des tests"
+          }
         }
       }
     }

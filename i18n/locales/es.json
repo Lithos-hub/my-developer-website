@@ -53,6 +53,16 @@
       "frontEndDeveloper": "Desarrollador Front-end",
       "softwareEngineer": "Ingeniero de Software"
     },
+    "projects": {
+      "1": "Aplicación interna de BBVA",
+      "2": "Varias aplicaciones de McKinsey & Company y Repsol",
+      "3": "Sitio web principal de Europcar",
+      "4": "Aplicación web de PhotoPills",
+      "5": {
+        "utamed": "Varias aplicaciones de la Universidad UTAMED",
+        "elCorteIngles": "Sitios web del grupo El Corte Inglés (Web principal, Primeriti, Supermercado, etc.)"
+      }
+    },
     "items": {
       "1": {
         "tasks": {

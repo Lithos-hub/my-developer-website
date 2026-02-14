@@ -53,6 +53,16 @@
       "frontEndDeveloper": "Sviluppatore Front-end",
       "softwareEngineer": "Ingegnere del Software"
     },
+    "projects": {
+      "1": "Applicazione interna di BBVA",
+      "2": "Diverse applicazioni per McKinsey & Company e Repsol",
+      "3": "Sito web principale di Europcar",
+      "4": "Applicazione web di PhotoPills",
+      "5": {
+        "utamed": "Diverse applicazioni dell'Università UTAMED",
+        "elCorteIngles": "Siti web del gruppo El Corte Inglés (Web principale, Primeriti, Supermercato, ecc.)"
+      }
+    },
     "items": {
       "1": {
         "tasks": {
@@ -95,13 +105,23 @@
         }
       },
       "5": {
-        "tasks": {
-          "1": "Sto lavorando in uno squad interno per El Corte Inglés per sviluppare una nuova esperienza e-commerce",
-          "2": "Sto sviluppando nuove funzionalità e risolvendo problemi e difetti in diversi progetti per una nuova esperienza di ricerca",
-          "3": "Lavoro allo sviluppo di nuove funzionalità che espandono o migliorano l'esperienza del sito web, nonché al refactoring e al miglioramento delle sue prestazioni",
-          "4": "Sto sviluppando test unitari con Jest, Testing Library e Vue Test Utils",
-          "5": "Collaboro con il team QA per i test manuali",
-          "6": "Sto lavorando sotto la metodologia Scrum"
+        "1": {
+          "tasks": {
+            "1": "Ho lavorato in uno squad interno per El Corte Inglés per sviluppare una nuova esperienza e-commerce",
+            "2": "Ho sviluppato nuove funzionalità e risolto problemi e difetti in diversi progetti per una nuova esperienza di ricerca",
+            "3": "Ho lavorato allo sviluppo di nuove funzionalità che espandono o migliorano l'esperienza del sito web, nonché al refactoring e al miglioramento delle sue prestazioni",
+            "4": "Ho sviluppato test unitari con Jest, Testing Library e Vue Test Utils",
+            "5": "Ho collaborato con il team QA per i test manuali",
+            "6": "Ho lavorato sotto la metodologia Scrum"
+          }
+        },
+        "2": {
+          "tasks": {
+            "1": "Ho avuto piena responsabilità del lato frontend delle varie applicazioni dell'università",
+            "2": "Ho guidato diversi progetti insieme allo sviluppo dell'ERP dell'università da zero",
+            "3": "Ho preso decisioni tecniche relative all'architettura, all'uso delle tecnologie e al design UX/UI",
+            "4": "Ho proposto flussi di lavoro per la costruzione della pipeline, la sicurezza del codice, il formato e l'esecuzione dei test"
+          }
         }
       }
     }

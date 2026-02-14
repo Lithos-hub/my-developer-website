@@ -48,7 +48,7 @@ export const DEV_EXPERIENCE = [
     ],
     tasksKeys: [
       {
-        projectName: "BBVA app",
+        projectName: "experience.projects.1",
         tasks: [
           "experience.items.1.tasks.1",
           "experience.items.1.tasks.2",
@@ -91,7 +91,7 @@ export const DEV_EXPERIENCE = [
     ],
     tasksKeys: [
       {
-        projectName: "McKinsey & Company and Repsol apps",
+        projectName: "experience.projects.2",
         tasks: [
           "experience.items.2.tasks.1",
           "experience.items.2.tasks.2",
@@ -129,7 +129,7 @@ export const DEV_EXPERIENCE = [
     ],
     tasksKeys: [
       {
-        projectName: "Europcar website",
+        projectName: "experience.projects.3",
         tasks: [
           "experience.items.3.tasks.1",
           "experience.items.3.tasks.2",
@@ -163,7 +163,7 @@ export const DEV_EXPERIENCE = [
     ],
     tasksKeys: [
       {
-        projectName: "PhotoPills app",
+        projectName: "experience.projects.4",
         tasks: [
           "experience.items.4.tasks.1",
           "experience.items.4.tasks.2",
@@ -200,7 +200,7 @@ export const DEV_EXPERIENCE = [
     ],
     tasksKeys: [
       {
-        projectName: "UTAMED University applications",
+        projectName: "experience.projects.5.utamed",
         tasks: [
           "experience.items.5.2.tasks.1",
           "experience.items.5.2.tasks.2",
@@ -209,7 +209,7 @@ export const DEV_EXPERIENCE = [
         ],
       },
       {
-        projectName: "El Corte Inglés websites",
+        projectName: "experience.projects.5.elCorteIngles",
         tasks: [
           "experience.items.5.1.tasks.1",
           "experience.items.5.1.tasks.2",

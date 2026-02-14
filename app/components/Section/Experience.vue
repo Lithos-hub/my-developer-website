@@ -129,7 +129,7 @@
               >
                 <span
                   class="experience-card__label experience-card__label--project"
-                  >#{{ projectIndex + 1 }} {{ project.projectName }}</span
+                  >#{{ projectIndex + 1 }} {{ $t(project.projectName) }}</span
                 >
                 <span
                   class="experience-card__label experience-card__label--tasks"
